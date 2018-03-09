@@ -6,12 +6,13 @@
 //  Copyright © 2017年 HuaZhengInfo. All rights reserved.
 //
 
-import UIKit 
-
+import UIKit
+import SwiftyJSON
 
 private let MeCellId = "MeCellId"
 
-class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
+class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+ 
 
     var  meTabView: UITableView?
     var  meHeardView: UIView?
@@ -27,15 +28,21 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         TitleArray()
         setupUI()
         
+        requestData()
     }
+    func requestData()  {
+        let param  = BaseParam()
+        param.key = "0d70d08abff704369a461b1f4f852e80"
+        
+        let dict = NSMutableDictionary.init()
+        dict["key"] = nil
 
-}
-
-
-
-// MARK: - 创建Tab
-extension MeCenterViewController{
-    
+        
+        ZMETool.meRequest(params: (dict as? [String : Any])) { ( res) in
+//
+        }
+     }
+        
     func TitleArray(){
     
         self.meTabTitle = ["我的订单","我的收藏","申请服务商","帮助与反馈","优惠券","消息","设置"]
@@ -85,25 +92,4 @@ extension MeCenterViewController{
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

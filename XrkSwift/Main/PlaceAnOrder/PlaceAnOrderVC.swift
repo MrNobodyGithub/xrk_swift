@@ -8,11 +8,18 @@
 
 import UIKit
 
-class PlaceAnOrderVC: UIViewController {
+class PlaceAnOrderVC: UIViewController,UINavigationControllerDelegate,UIViewControllerTransitioningDelegate {
 
+//    var navigationOperation :UINavigationControllerOperation
+    
+//     func navigationController(navigationController: UINavigationController!, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController!, toViewController toVC: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+//        navigationOperation = operation
+//        return self as! UIViewControllerAnimatedTransitioning
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.delegate = self
         // Do any additional setup after loading the view.
     }
 

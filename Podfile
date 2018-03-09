@@ -8,6 +8,6 @@ target ‘XrkSwift’ do
     pod 'SVProgressHUD'  , '~> 2.2.2'
     pod 'SwiftyJSON'  , '~> 3.1.4'
     pod 'DZNEmptyDataSet' ,'~> 1.8.1'
-    
+    pod 'AFNetworking', '~> 3.0'
 
 end

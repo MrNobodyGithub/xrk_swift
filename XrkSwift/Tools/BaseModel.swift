@@ -31,18 +31,19 @@ class BaseResult {
         
     }
 }
+class BaseParam: NSObject {
+    var key : String?
+    
+    
+//    var key : String{
+//        get{
+//            return "0d70d08abff704369a461b1f4f852e80"
+//        }
+//    }
+    
+    
+}
 
  
-class HomeModel {
-    var banner_img: String?
-    var banner_title: String?
-    var banner_url: String?
-      
-    init(jsonData: JSON) {
-        banner_url = jsonData["banner_url"].stringValue;
-        banner_img = jsonData["banner_img"].stringValue
-        banner_title = jsonData["banner_title"].stringValue
-        
-    }
-}
+
 

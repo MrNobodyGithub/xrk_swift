@@ -9,36 +9,25 @@
 import UIKit
 
 @UIApplicationMain
+
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var tabbar :UITabBarController?
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        
+ 
         let tabbarC = UITabBarController.init()
-        let vcHome = HomeViewController()
-        let vcRe = PlaceAnOrderVC()
-        let vcMe = MeCenterViewController()
+        tabbar = tabbarC
         
-        let navHome = UINavigationController.init(rootViewController: vcHome)
-        vcHome.tabBarItem.title = "首页"
-        vcHome.tabBarItem.selectedImage = UIImage.init(named: "tabbar_home_selected")
-        vcHome.tabBarItem.image = UIImage.init(named: "tabbar_home")
-        
-        vcRe.tabBarItem.title = "re"
-        vcRe.tabBarItem.selectedImage = UIImage.init(named: "tabbar_message_center_selected")
-        vcRe.tabBarItem.image = UIImage.init(named: "tabbar_message_center")
-        
-        vcMe.tabBarItem.title = "我的"
-        vcMe.tabBarItem.selectedImage = UIImage.init(named: "tabbar_profile_selected")
-        vcMe.tabBarItem.image = UIImage.init(named: "tabbar_profile")
-        
-        tabbarC.addChildViewController(navHome)
-        tabbarC.addChildViewController(vcRe)
-        tabbarC.addChildViewController(vcMe)
+        kaddChildVc(vc: HomeViewController(), title: "首页", imageName: "tabbar_home", imageSelect: "tabbar_home_selected")
+        kaddChildVc(vc: PlaceAnOrderVC(), title: "re", imageName: "tabbar_message_center", imageSelect: "tabbar_message_center_selected")
+        kaddChildVc(vc: MeCenterViewController(), title: "我的", imageName: "tabbar_profile", imageSelect: "tabbar_profile_selected")
         
         window = UIWindow()
         window?.frame = UIScreen.main.bounds
@@ -51,6 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func kaddChildVc(vc: UIViewController, title: String , imageName: String, imageSelect: String)  {
+        vc.tabBarItem.title = title
+        vc.tabBarItem.selectedImage = UIImage.init(named: imageSelect)
+        vc.tabBarItem.image = UIImage.init(named: imageName)
+        let nav = UINavigationController.init(rootViewController: vc)
+        nav.title = title
+        nav.hidesBottomBarWhenPushed = true
+        tabbar?.addChildViewController(nav)
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
