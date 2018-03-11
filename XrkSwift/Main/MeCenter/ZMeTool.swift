@@ -14,9 +14,9 @@ class ZMETool {
     static func meRequest(params:[String: Any]? = nil, success:@escaping(_ result : Any) -> ()) {
         ZHTTPTool.requestData(.post, urlString: URLME, params: params, success: { (res) in
             
-            let result = BaseResult.init(json: res as! JSON)
+//            let result = BaseResult.init(json: res as! JSON)
             
-            success(result)
+//            success(result)
         }) { ( res) in
             
         } 

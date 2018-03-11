@@ -11,38 +11,31 @@ import UIKit
 
 import SwiftyJSON
 
-class BaseResult {
+class BaseResult:NSObject {
     var code: Int = 0
     var datas: (Any)? = nil
     var array: NSArray = []
     var dict = Dictionary<String, Any>()
     
-    var success:Bool{
-        get{
- 
-            if code == 200 {
-                return true
-            }
-            return false
-        }
-    }
-    init(json:JSON) {
-         code = json["code"].intValue
-        
-    }
-}
-class BaseParam: NSObject {
-    var key : String?
-    
-    
-//    var key : String{
+//    var success:Bool{
 //        get{
-//            return "0d70d08abff704369a461b1f4f852e80"
+// 
+//            if code == 200 {
+//                return true
+//            }
+//            return false
 //        }
 //    }
-    
-    
+//    init(json:JSON) {
+//         code = json["code"].intValue
+//    }
 }
+
+
+class BaseParam: NSObject {
+    var key : String?
+}
+
 
  
 

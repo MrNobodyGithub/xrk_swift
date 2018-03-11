@@ -22,27 +22,23 @@ class ZHomeTool: NSObject {
     }
   
    
-    func homeRequestList(params:[ String: Any]? = nil, success:@escaping (_ result: Any) -> ())  {
+   static func homeRequestList(params:[ String: Any]? = nil, success:@escaping (_ result: Any) -> ())  {
         ZHTTPTool.requestData(.get, urlString: URLHomeList, params: nil, success: { ( res) in
-            let result = BaseResult.init(json: res as! JSON)
-            if result.success {
-                let aa = res as! JSON
-                let arr = aa["datas"]["recommend_list"]
-                let mutarr : NSMutableArray = []
-                for i in 0...arr.count-1{
-                    let model = HomeModelList.init(json: arr[i] )
-                    mutarr.add(model)
-                    result.datas = model
-                }
-                result.array = mutarr.mutableCopy() as! NSArray
-                
-            }
-            success(result)
+//            let result = BaseResult.init(json: res as! JSON)
+//            if result.success {
+//                let aa = res as! JSON
+//                let arr = aa["datas"]["recommend_list"]
+//                let mutarr : NSMutableArray = []
+//                for i in 0...arr.count-1{
+//                    let model = HomeModelList.init(json: arr[i] )
+//                    mutarr.add(model)
+//                    result.datas = model
+//                }
+//                result.array = mutarr.mutableCopy() as! NSArray
+//            }
+//            success(result)
         }) { (res) in
-            
         }
-        
-    }
-    
+    } 
     
 }
