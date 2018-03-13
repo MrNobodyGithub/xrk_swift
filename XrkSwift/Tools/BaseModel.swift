@@ -10,22 +10,24 @@ import Foundation
 import UIKit
 
 import SwiftyJSON
-
-class BaseResult:NSObject {
+import HandyJSON
+class BaseResult: HandyJSON {
     var code: Int = 0
     var datas: (Any)? = nil
     var array: NSArray = []
     var dict = Dictionary<String, Any>()
-    
-//    var success:Bool{
-//        get{
-// 
-//            if code == 200 {
-//                return true
-//            }
-//            return false
-//        }
-//    }
+    var page_total = ""
+    required init( ) {
+         
+    }
+    var success:Bool{
+        get{
+            if code == 200 {
+                return true
+            }
+            return false
+        }
+    }
 //    init(json:JSON) {
 //         code = json["code"].intValue
 //    }

@@ -8,7 +8,7 @@
 import UIKit
 
 import SwiftyJSON
-//import SwiftyJSON
+import HandyJSON
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var viewdown: UIView!
@@ -28,43 +28,63 @@ class HomeViewController: UIViewController {
     }
     
     func actionRightItem()  {
-        let vc = TestViewController()
-        vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
-        let nav = UINavigationController.init(rootViewController: TestViewController())
         
-        self.present(nav, animated: true) {
-            
-        }
         
     }
     func requestData() {
-        
-        //        http://www.hisunflower.com/mobile/index.php?act=service_store&op=recommend_list&area_id=224&curpage=0&page=10
-        
         let url = "http://www.hisunflower.com/mobile/index.php?act=service_store&op=recommend_list"
-//        let param = "act=service_store&op=recommend_list&area_id=224&curpage=0&page=10"
-//        &area_id=224&curpage=0&page=10
-        let model = HomeModelOne.init(area_id: "224")
-        let json = JSON.init(model)
+//        let model = HomeModelOne.init(area_id: "224")
+//        var json = JSON.init(model)
         
-        print(json)
+        let m = HomeParamList()
+        m.area_id = "224"
+        m.curpage = "0"
+        m.page = "10"
+        let  json = m.toJSONString()
         RequestTool.defaultTool.request(method: .get, urlString: url, parameters: json as AnyObject) { (responseObj , err ) in
             
+//            print("-------")
+//            print(responseObj)
+//            print("++++++")
+            
+            let b =  BaseResult.deserialize(from: responseObj)
+            if (b?.success)! {
+                print("success")
+            }else{
+                print("fail")
+            }
+//            print("code:",b?.code ?? "10")
+//            print("page_total",b?.page_total ?? "3")
+            
+            
+//            print( responseObj)
+//            let arr =  responseObj[0]
+//            print(arr)
+            
+//        let jsonData = responseObj?.keys
             print("-------")
-            print(responseObj)
-            print("++++++")
-            let jsona = JSON.init(responseObj)
-            print(jsona)
-            let result = BaseResult.init()
-            result.code = jsona["code"].int!
-//            result.array = jsona["recommend_list"].array! as NSArray
-//            BaseResult.object
-//            User.objectWithKeyValues(dict
-//            let resultafs =  BaseResult.setValuesForKeys(jsona)
-//            let mutarr = NSMutableArray.init()
+            var datas: NSDictionary = responseObj!["datas"] as! NSDictionary
+            let list = datas["recommend_list"]
+//            print(list)
+//            print("++")
             
+            var mutArr = NSMutableArray.init()
+            for dic: NSDictionary in list as! Array{
+                let submodel = HomeModelList.deserialize(from: dic)
+                mutArr.add(submodel)
+            }
+            b?.array = mutArr.mutableCopy() as! NSArray
+            print(b?.array, "++")
             
+//            print(jsonData)
             
+//            let jsonData:Data = jsonString.data(using: .utf8)!
+//            
+//            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+//            if dict != nil {
+//                return dict as! NSDictionary
+//            }
+//            return NSDictionary()
             
             
             
