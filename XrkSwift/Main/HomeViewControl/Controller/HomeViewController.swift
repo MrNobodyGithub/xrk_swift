@@ -46,6 +46,8 @@ class HomeViewController: UIViewController {
 //        &area_id=224&curpage=0&page=10
         let model = HomeModelOne.init(area_id: "224")
         let json = JSON.init(model)
+        
+        print(json)
         RequestTool.defaultTool.request(method: .get, urlString: url, parameters: json as AnyObject) { (responseObj , err ) in
             
             print("-------")
@@ -55,11 +57,11 @@ class HomeViewController: UIViewController {
             print(jsona)
             let result = BaseResult.init()
             result.code = jsona["code"].int!
-            result.array = jsona["recommend_list"].array! as NSArray
+//            result.array = jsona["recommend_list"].array! as NSArray
 //            BaseResult.object
 //            User.objectWithKeyValues(dict
-            let resultafs =  BaseResult.setValuesForKeys(jsona)
-            let mutarr = NSMutableArray.init()
+//            let resultafs =  BaseResult.setValuesForKeys(jsona)
+//            let mutarr = NSMutableArray.init()
             
             
             
