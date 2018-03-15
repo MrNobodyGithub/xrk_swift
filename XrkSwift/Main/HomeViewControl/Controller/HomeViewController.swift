@@ -10,9 +10,11 @@ import UIKit
 import SwiftyJSON
 import HandyJSON
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var viewdown: UIView!
     
+    
+    var dataArr = NSArray.init()
     var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,78 +34,50 @@ class HomeViewController: UIViewController {
         
     }
     func requestData() {
-        let url = "http://www.hisunflower.com/mobile/index.php?act=service_store&op=recommend_list"
+        let url = URL_home_list
 //        let model = HomeModelOne.init(area_id: "224")
-//        var json = JSON.init(model)
+//        var json = JSON.init(model) 
+        let m = HomeParamList(areaId: "224",curp: "0",pg:"10")
+        let  json = JSON.init(m)
+ 
         
-        let m = HomeParamList()
-        m.area_id = "224"
-        m.curpage = "0"
-        m.page = "10"
-        let  json = m.toJSONString()
-        RequestTool.defaultTool.request(method: .get, urlString: url, parameters: json as AnyObject) { (responseObj , err ) in
-            
-//            print("-------")
-//            print(responseObj)
-//            print("++++++")
-            
-            let b =  BaseResult.deserialize(from: responseObj)
-            if (b?.success)! {
-                print("success")
+        
+        ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
+            let result: BaseResult = res as! BaseResult
+            if result.success {
+                self.dataArr = result.array
+                self.tableView.reloadData()
             }else{
-                print("fail")
+            
             }
-//            print("code:",b?.code ?? "10")
-//            print("page_total",b?.page_total ?? "3")
-            
-            
-//            print( responseObj)
-//            let arr =  responseObj[0]
-//            print(arr)
-            
-//        let jsonData = responseObj?.keys
-            print("-------")
-            var datas: NSDictionary = responseObj!["datas"] as! NSDictionary
-            let list = datas["recommend_list"]
-//            print(list)
-//            print("++")
-            
-            var mutArr = NSMutableArray.init()
-            for dic: NSDictionary in list as! Array{
-                let submodel = HomeModelList.deserialize(from: dic)
-                mutArr.add(submodel)
-            }
-            b?.array = mutArr.mutableCopy() as! NSArray
-            print(b?.array, "++")
-            
-//            print(jsonData)
-            
-//            let jsonData:Data = jsonString.data(using: .utf8)!
-//            
-//            let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-//            if dict != nil {
-//                return dict as! NSDictionary
-//            }
-//            return NSDictionary()
-            
-            
-            
-            
-            
+        }) { ( err) in
+
         }
-//        NetworkTools.shardTools.request(method: .Post, urlString: urlString, parameters: params as AnyObject?) { (responseObject, error) in
-//
-//            if error != nil {
-//                print(error!)
-//                return
-//            }
-//            guard (responseObject as? [String : AnyObject]) != nil else{
-//
-//                return
-//            }
-//            print(responseObject!)
-//        }
         
+//        RequestTool.defaultTool.request(method: .get, urlString: url, parameters: json as AnyObject, resultBlock: { (responseObj) in
+//            let b =  BaseResult.deserialize(from: responseObj)
+//            if (b?.success)! {
+//                print("success")
+//            }else{
+//                print("fail")
+//            }
+//
+//            let datas: NSDictionary = responseObj!["datas"] as! NSDictionary
+//            let list = datas["recommend_list"]
+//            let mutArr = NSMutableArray.init()
+//            for dic: NSDictionary in list as! Array{
+//                let submodel = HomeModelList.deserialize(from: dic)
+//                mutArr.add(submodel)
+//            }
+//            b?.array = mutArr.mutableCopy() as! NSArray
+//
+//            self.dataArr = (b?.array)!
+//            self.tableView.reloadData()
+//        }) { (err) in
+//
+//
+//        }
+//
 
         
          
@@ -112,5 +86,29 @@ class HomeViewController: UIViewController {
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: MLScreenWidth, height: MLScreenHeight - 64 - 49))
         self.view.addSubview(tableView)
         tableView.backgroundColor = UIColor.cyan
+        tableView.delegate = self as UITableViewDelegate
+        tableView.dataSource = self as UITableViewDataSource
      }
+    
+    //代理方法
+    //tableviewDelegate
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.dataArr.count > 0 {
+             return self.dataArr.count
+        }
+        return 0
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = HomeListCell.cellWith(tableView: tableView)
+        cell.cellWithData(model: self.dataArr[indexPath.row] as! HomeModelList)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
 }

@@ -12,6 +12,6 @@ let ADDRESS = "http://test.hisunflower.com/mobile/index.php?"
 let URLHomeList = "http://www.hisunflower.com/mobile/index.php?act=service_store&op=recommend_list&area_id=224&curpage=0&page=10"
 let URLME = "http://www.hisunflower.com/mobile/index.php?act=member_account&op=getMemberInfo"
 
-
+let URL_home_list = ADDRESS+"act=service_store&op=recommend_list"
 
 

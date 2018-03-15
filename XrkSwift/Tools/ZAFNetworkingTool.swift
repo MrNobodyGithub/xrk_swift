@@ -20,16 +20,17 @@ class RequestTool : AFHTTPSessionManager{
         return tools
     }()
     
-    func request(method: MethodType , urlString: String, parameters: AnyObject?,resultBlock : @escaping([String : Any]?, Error?) -> ()){
+    func request(method: MethodType , urlString: String, parameters: AnyObject?,resultBlock : @escaping([String : Any]?) -> (),failBlock:@escaping(NSError?) -> ()){
         // 定义一个请求成功之后要执行的闭包
         // 成功闭包
         let successBlock = { (task: URLSessionDataTask, responseObj: Any?) in
-            resultBlock(responseObj as? [String : Any], nil)
+            resultBlock(responseObj as? [String : Any])
         }
         
         // 失败的闭包
         let failureBlock = { (task: URLSessionDataTask?, error: Error) in
-            resultBlock(nil, error)
+//            resultBlock(nil, error)
+            failBlock(error as NSError)
         }
         
         // Get 请求

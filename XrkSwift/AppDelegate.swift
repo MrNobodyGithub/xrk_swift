@@ -36,14 +36,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         
-
         return true
     }
 
     func kaddChildVc(vc: UIViewController, title: String , imageName: String, imageSelect: String)  {
         vc.tabBarItem.title = title
-        vc.tabBarItem.selectedImage = UIImage.init(named: imageSelect)
+        let att = NSDictionary.init(object: UIColor.orange, forKey: NSForegroundColorAttributeName as NSCopying)
+        vc.tabBarItem.setTitleTextAttributes(att as? [String : Any], for: UIControlState.selected)
+         
+        let selImg = UIImage.init(named: imageSelect)?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.selectedImage = selImg
         vc.tabBarItem.image = UIImage.init(named: imageName)
+        
         let nav = UINavigationController.init(rootViewController: vc)
         nav.title = title
         nav.hidesBottomBarWhenPushed = true

@@ -10,4 +10,7 @@ target 'XrkSwift' do
     pod 'MJExtension'
     pod 'Alamofire', '~> 4.0'
     pod 'HandyJSON', '~> 1.8.0'
+    
+    pod 'SDWebImage', '~> 4.0'
+    pod 'MBProgressHUD', '~> 1.1.0'
 end

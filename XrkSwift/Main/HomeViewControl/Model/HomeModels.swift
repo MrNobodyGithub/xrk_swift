@@ -10,13 +10,21 @@ import UIKit
 import SwiftyJSON
 import HandyJSON
 //--------------param ---------------
-class HomeParamList: HandyJSON {
+class HomeParamList: BaseParam {
     //    &area_id=224&curpage=0&page=10
     var area_id :String = ""
     var curpage: String = ""
     var page : String = ""
     
-    required init() {
+    
+    required init( areaId : String, curp: String, pg:String) {
+//        area_id = areaId
+//        curpage = curp
+//        page = pg
+        self.area_id = areaId
+        self.curpage = curp
+        self.page = pg
+        
     }
 }
 

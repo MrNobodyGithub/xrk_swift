@@ -8,37 +8,36 @@
 
 import UIKit
 import SwiftyJSON
+import HandyJSON
+
 class ZHomeTool: NSObject {
- 
-   static func homeRequest(_ type:MethodType, urlString:String ,params: [String : Any]? = nil, success:@escaping(_ result : Any) -> () ){
-        ZHTTPTool.requestData(.get, urlString: urlString, params: nil, success: { ( res) in
-            let aa  = res as! JSON;
-            let dic =  aa["datas"]["banner_position_list"][0][0]
-            let model = HomeModel.init(jsonData: dic )
-            success(model)
-        }) { (res) in
+  
+    
+    static func homeRequestList(params: AnyObject? = nil, success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: NSError) -> ())  {
+    
+        RequestTool.defaultTool.request(method: .get, urlString: URL_home_list, parameters: params, resultBlock: { ( responseObj) in
             
+            let b =  BaseResult.deserialize(from: responseObj)
+//            if (b?.success)! {
+//                print("success")
+//            }else{
+//                print("fail")
+//            }
+            
+            let datas: NSDictionary = responseObj!["datas"] as! NSDictionary
+            let list = datas["recommend_list"]
+            let mutArr = NSMutableArray.init()
+            for dic: NSDictionary in list as! Array{
+                let submodel = HomeModelList.deserialize(from: dic)
+                mutArr.add(submodel ?? HomeModelList())
+            }
+            b?.array = mutArr.mutableCopy() as! NSArray
+            
+            success(b ?? BaseResult())
+            
+        }) { (err) in
+            fail(err!)
         }
     }
-  
-   
-   static func homeRequestList(params:[ String: Any]? = nil, success:@escaping (_ result: Any) -> ())  {
-        ZHTTPTool.requestData(.get, urlString: URLHomeList, params: nil, success: { ( res) in
-//            let result = BaseResult.init(json: res as! JSON)
-//            if result.success {
-//                let aa = res as! JSON
-//                let arr = aa["datas"]["recommend_list"]
-//                let mutarr : NSMutableArray = []
-//                for i in 0...arr.count-1{
-//                    let model = HomeModelList.init(json: arr[i] )
-//                    mutarr.add(model)
-//                    result.datas = model
-//                }
-//                result.array = mutarr.mutableCopy() as! NSArray
-//            }
-//            success(result)
-        }) { (res) in
-        }
-    } 
     
 }
