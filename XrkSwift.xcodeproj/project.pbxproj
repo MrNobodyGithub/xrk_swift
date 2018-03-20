@@ -36,6 +36,7 @@
 		4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */; };
 		4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A96EF205A3DA20043062D /* HomeListCell.xib */; };
 		4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96F1205A57E50043062D /* ZShowHUD.swift */; };
+		4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50E7F20610DF300B983B4 /* AVKit.framework */; };
 		A708A6F6D0684F3B00584FF0 /* Pods_XrkSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCellView.swift; sourceTree = "<group>"; };
 		4B8A96EF205A3DA20043062D /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		4B8A96F1205A57E50043062D /* ZShowHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZShowHUD.swift; sourceTree = "<group>"; };
+		4BE50E7F20610DF300B983B4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B77260DFD7841D17FDBDC96C /* Pods-XrkSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D593122B90D8639A547AF65A /* Pods-XrkSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */,
 				4B8509BA20528C4D00D2CE61 /* AFNetworking.framework in Frameworks */,
 				A708A6F6D0684F3B00584FF0 /* Pods_XrkSwift.framework in Frameworks */,
 			);
@@ -352,6 +355,7 @@
 		D7994E2416FB64532058D243 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BE50E7F20610DF300B983B4 /* AVKit.framework */,
 				4B8509BB20528C4D00D2CE61 /* AFNetworking.framework */,
 				2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */,
 			);
@@ -715,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = C3NGB9EK32;
@@ -724,10 +728,10 @@
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HuaZhengInfo.testz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b0de5b9-4305-40a3-955a-d2e87b07ba8c";
-				PROVISIONING_PROFILE_SPECIFIER = huazhengztest;
+				PROVISIONING_PROFILE = "4e0a1413-d8b2-427d-afb3-5d370031ebfa";
+				PROVISIONING_PROFILE_SPECIFIER = hisunflowerhzappHocDevs;
 				SWIFT_OBJC_BRIDGING_HEADER = "XrkSwift/Other/File/XrkSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -749,10 +753,10 @@
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HuaZhengInfo.testz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5b0de5b9-4305-40a3-955a-d2e87b07ba8c";
-				PROVISIONING_PROFILE_SPECIFIER = huazhengztest;
+				PROVISIONING_PROFILE = "cde4d332-75d2-4a8e-9593-e23cc88a28c7";
+				PROVISIONING_PROFILE_SPECIFIER = HzappHocPros;
 				SWIFT_OBJC_BRIDGING_HEADER = "XrkSwift/Other/File/XrkSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

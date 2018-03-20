@@ -9,10 +9,11 @@ import UIKit
 
 import SwiftyJSON
 import HandyJSON
-
+import AVKit
 class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var viewdown: UIView!
     
+    var player_s :AVPlayer = AVPlayer.init()
     
     var dataArr = NSArray.init()
     var tableView: UITableView!
@@ -31,7 +32,12 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
     func actionRightItem()  {
         
-        
+      let str = "http://fs.w.kugou.com/201803201552/bdf56716d06d36c70c98c6d664256d05/G129/M07/0F/1D/YZQEAFqEPxCAATmCADTDHJ21QXE192.mp3"
+         let url = NSURL.init(string: str)
+        let player = AVPlayer.init(url: url! as URL)
+        self.player_s = player
+        player.play()
+        player.pause()
     }
     func requestData() {
         let url = URL_home_list
