@@ -41,12 +41,16 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
     func actionRightItem()  {
         
-        MBProgressHUD.zshow(view: self.view)
+        
+        ZShowHud.show(view: self.view)
+        
+//        MBProgressHUD.zshow(view: self.view)
 //        MBProgressHUD.showAdded(to: self.view, animated: true)
 //        MBProgressHUD.hudShowMessage(curview: self.view, message: "adsf")
         DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 2) {
             DispatchQueue.main.async(execute: {
-                MBProgressHUD.zhide(view: self.view)
+                ZShowHud.hide(view: self.view)
+//                MBProgressHUD.zhide(view: self.view)
 //                MBProgressHUD.hudHid(curview: self.view)
 //                MBProgressHUD.hide(for: self.view, animated: true)
             })

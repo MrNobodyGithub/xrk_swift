@@ -10,6 +10,41 @@ import Foundation
 import UIKit
 import MBProgressHUD
 
+class ZShowHud: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    //    required init?(coder aDecoder: NSCoder) {
+//        print("--fail zshowhud--")
+//    }
+    
+    class func show(view: UIView!){
+        let v = ZShowHud.init(frame: view.bounds)
+        view.addSubview(v)
+        v.backgroundColor = UIColor.red
+    }
+    class func hide(view: UIView!){
+        for v in view.subviews {
+            if v.isKind(of: self){
+                v.removeFromSuperview()
+            }
+        }
+        
+//        let v = ZShowHud.init(frame: view.bounds)
+//        view.addSubview(v)
+//        v.backgroundColor = UIColor.red
+    }
+    
+    
+    
+    
+    
+}
+
 extension MBProgressHUD{
     // 命名规范 hud+展示or隐藏+
     
@@ -64,8 +99,6 @@ extension MBProgressHUD{
     class func zhide(view: UIView?){
         self.hide(for: view!, animated: true)
     }
-    
-    
 }
 
 
