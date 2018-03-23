@@ -10,6 +10,8 @@ import UIKit
 import SwiftyJSON
 import HandyJSON
 import AVKit
+import MBProgressHUD
+
 class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var viewdown: UIView!
     
@@ -17,13 +19,20 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
     var dataArr = NSArray.init()
     var tableView: UITableView!
+    var headerView : HomeHeaderView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.basicConfigration()
-        self.setupTableview()
-        requestData()
+         basicConfigration()
+         setupTableview()
+         requestData()
     }
     func basicConfigration()  {
          self.title = "home"
@@ -32,68 +41,63 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
     func actionRightItem()  {
         
-      let str = "http://fs.w.kugou.com/201803201552/bdf56716d06d36c70c98c6d664256d05/G129/M07/0F/1D/YZQEAFqEPxCAATmCADTDHJ21QXE192.mp3"
-         let url = NSURL.init(string: str)
-        let player = AVPlayer.init(url: url! as URL)
-        self.player_s = player
-        player.play()
-        player.pause()
+        MBProgressHUD.zshow(view: self.view)
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//        MBProgressHUD.hudShowMessage(curview: self.view, message: "adsf")
+        DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 2) {
+            DispatchQueue.main.async(execute: {
+                MBProgressHUD.zhide(view: self.view)
+//                MBProgressHUD.hudHid(curview: self.view)
+//                MBProgressHUD.hide(for: self.view, animated: true)
+            })
+
+        }
+        
+       
+        
+        
+        
     }
     func requestData() {
+        requestDataHeader()
+        requestDataList()
+    }
+    func  requestDataHeader()  {
+        
+    }
+    func requestDataList()  {
         let url = URL_home_list
-//        let model = HomeModelOne.init(area_id: "224")
-//        var json = JSON.init(model) 
+        //        let model = HomeModelOne.init(area_id: "224")
+        //        var json = JSON.init(model)
         let m = HomeParamList(areaId: "224",curp: "0",pg:"10")
         let  json = JSON.init(m)
- 
-        
-        
         ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
             let result: BaseResult = res as! BaseResult
             if result.success {
                 self.dataArr = result.array
                 self.tableView.reloadData()
             }else{
-            
+                
             }
         }) { ( err) in
-
+            
         }
-        
-//        RequestTool.defaultTool.request(method: .get, urlString: url, parameters: json as AnyObject, resultBlock: { (responseObj) in
-//            let b =  BaseResult.deserialize(from: responseObj)
-//            if (b?.success)! {
-//                print("success")
-//            }else{
-//                print("fail")
-//            }
-//
-//            let datas: NSDictionary = responseObj!["datas"] as! NSDictionary
-//            let list = datas["recommend_list"]
-//            let mutArr = NSMutableArray.init()
-//            for dic: NSDictionary in list as! Array{
-//                let submodel = HomeModelList.deserialize(from: dic)
-//                mutArr.add(submodel)
-//            }
-//            b?.array = mutArr.mutableCopy() as! NSArray
-//
-//            self.dataArr = (b?.array)!
-//            self.tableView.reloadData()
-//        }) { (err) in
-//
-//
-//        }
-//
-
-        
-         
     }
     func setupTableview()  {
-        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: MLScreenWidth, height: MLScreenHeight - 64 - 49))
+        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: MLScreenHeight - 0 - 49))
         self.view.addSubview(tableView)
         tableView.backgroundColor = UIColor.cyan
         tableView.delegate = self as UITableViewDelegate
         tableView.dataSource = self as UITableViewDataSource
+        
+        //tableHeaderView
+
+        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: 200))
+        headerView.dataArr = ["a","b","a","b","a","b","a","b","a","b"]
+        tableView.tableHeaderView = headerView
+        self.headerView = headerView
+        headerView.backgroundColor = UIColor.cyan
+        
      }
     
     //代理方法
@@ -115,6 +119,15 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func kAudio( ) {
+        let str = "http://fs.w.kugou.com/201803201552/bdf56716d06d36c70c98c6d664256d05/G129/M07/0F/1D/YZQEAFqEPxCAATmCADTDHJ21QXE192.mp3"
+        let url = NSURL.init(string: str)
+        let player = AVPlayer.init(url: url! as URL)
+        self.player_s = player
+        player.play()
+
     }
     
 }

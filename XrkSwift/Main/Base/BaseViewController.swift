@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,11 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    
+extension UIViewController{
+    func test() -> String {
+        print("--test--")
+        return "testa"
+    }
 }

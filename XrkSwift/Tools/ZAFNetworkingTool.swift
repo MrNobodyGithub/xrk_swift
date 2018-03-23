@@ -14,9 +14,8 @@ import AFNetworking
 class RequestTool : AFHTTPSessionManager{
     
     static let defaultTool : RequestTool = {
-        let tools = RequestTool()
-        tools.responseSerializer.acceptableContentTypes?.insert("text/html")
-        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        let tools = RequestTool() 
+        tools.responseSerializer.acceptableContentTypes = NSSet.init(array: ["text/html","text/plain" , "multipart/form-data", "application/json","image/jpeg", "image/png", "application/octet-stream", "text/json"]) as? Set<String>
         return tools
     }()
     

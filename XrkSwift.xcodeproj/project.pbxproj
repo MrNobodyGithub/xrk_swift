@@ -19,6 +19,9 @@
 		18CEFEB11F612D98000A7F94 /* PlaceAnOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEB01F612D98000A7F94 /* PlaceAnOrderVC.swift */; };
 		18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEE51F61324E000A7F94 /* NavigationController.swift */; };
 		46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */; };
+		4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636632064AAD5002540BF /* HomeHeaderView.swift */; };
+		4B3636672064AE1F002540BF /* ZBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636662064AE1F002540BF /* ZBtn.swift */; };
+		4B3636692064B17F002540BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636682064B17F002540BF /* Extension.swift */; };
 		4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */; };
 		4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBD22018383E0081ABDB /* ZMeTool.swift */; };
 		4B36FBD820186FF10081ABDB /* StaticDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBD720186FF10081ABDB /* StaticDefine.swift */; };
@@ -28,8 +31,8 @@
 		4B7A58F41F62710C000AFCD0 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A58F31F62710C000AFCD0 /* HomeModels.swift */; };
 		4B7A58F51F62710C000AFCD0 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A58F31F62710C000AFCD0 /* HomeModels.swift */; };
 		4B7A593F1F6286D1000AFCD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A593D1F6286D1000AFCD0 /* HomeViewController.swift */; };
-		4B7A59441F628968000AFCD0 /* PreFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A59431F628968000AFCD0 /* PreFix.swift */; };
-		4B7A59451F628968000AFCD0 /* PreFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A59431F628968000AFCD0 /* PreFix.swift */; };
+		4B7A59441F628968000AFCD0 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A59431F628968000AFCD0 /* Header.swift */; };
+		4B7A59451F628968000AFCD0 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A59431F628968000AFCD0 /* Header.swift */; };
 		4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8509B820528C0D00D2CE61 /* OcSwiftBridgeObject.m */; };
 		4B8509BA20528C4D00D2CE61 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8509BB20528C4D00D2CE61 /* AFNetworking.framework */; };
 		4B8A96EC205A37B30043062D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96EB205A37B30043062D /* BaseModel.swift */; };
@@ -90,6 +93,9 @@
 		18CEFEE51F61324E000A7F94 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XrkSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAFNetworkingTool.swift; sourceTree = "<group>"; };
+		4B3636632064AAD5002540BF /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		4B3636662064AE1F002540BF /* ZBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBtn.swift; sourceTree = "<group>"; };
+		4B3636682064B17F002540BF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCommonTool.swift; sourceTree = "<group>"; };
 		4B36FBD22018383E0081ABDB /* ZMeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMeTool.swift; sourceTree = "<group>"; };
 		4B36FBD720186FF10081ABDB /* StaticDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDefine.swift; sourceTree = "<group>"; };
@@ -97,7 +103,7 @@
 		4B7A58F01F626F69000AFCD0 /* ZHomeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHomeTool.swift; sourceTree = "<group>"; };
 		4B7A58F31F62710C000AFCD0 /* HomeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		4B7A593D1F6286D1000AFCD0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4B7A59431F628968000AFCD0 /* PreFix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreFix.swift; sourceTree = "<group>"; };
+		4B7A59431F628968000AFCD0 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		4B8509B620528C0C00D2CE61 /* XrkSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XrkSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B8509B720528C0D00D2CE61 /* OcSwiftBridgeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OcSwiftBridgeObject.h; sourceTree = "<group>"; };
 		4B8509B820528C0D00D2CE61 /* OcSwiftBridgeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OcSwiftBridgeObject.m; sourceTree = "<group>"; };
@@ -280,6 +286,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4B3636652064AE10002540BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B3636662064AE1F002540BF /* ZBtn.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B36366A2064B18A002540BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B3636682064B17F002540BF /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		4B36FBD42018389B0081ABDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +315,7 @@
 			children = (
 				4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */,
 				4B8A96EF205A3DA20043062D /* HomeListCell.xib */,
+				4B3636632064AAD5002540BF /* HomeHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +331,8 @@
 		4B7A58DC1F6238D7000AFCD0 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				4B36366A2064B18A002540BF /* Extension */,
+				4B3636652064AE10002540BF /* View */,
 				4B8A96EA205A37B30043062D /* Model */,
 				4B8509B520528BE900D2CE61 /* File */,
 				4B7A58DD1F6238D7000AFCD0 /* Header */,
@@ -318,7 +343,7 @@
 		4B7A58DD1F6238D7000AFCD0 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				4B7A59431F628968000AFCD0 /* PreFix.swift */,
+				4B7A59431F628968000AFCD0 /* Header.swift */,
 				4B36FBD720186FF10081ABDB /* StaticDefine.swift */,
 			);
 			path = Header;
@@ -551,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3636692064B17F002540BF /* Extension.swift in Sources */,
 				4B8A96EC205A37B30043062D /* BaseModel.swift in Sources */,
 				4B36FBD820186FF10081ABDB /* StaticDefine.swift in Sources */,
 				18CEFE751F6127D3000A7F94 /* AppDelegate.swift in Sources */,
@@ -558,15 +584,17 @@
 				4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */,
 				46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */,
 				18B46D641F62444100E13869 /* MerchantCenterVC.swift in Sources */,
+				4B3636672064AE1F002540BF /* ZBtn.swift in Sources */,
 				4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */,
 				4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */,
 				4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */,
 				4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */,
 				18CEFEA91F612D28000A7F94 /* BaseViewController.swift in Sources */,
+				4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */,
 				4B7A593F1F6286D1000AFCD0 /* HomeViewController.swift in Sources */,
 				18CEFEB11F612D98000A7F94 /* PlaceAnOrderVC.swift in Sources */,
 				4B7A58D91F62372D000AFCD0 /* ZHttpTool.swift in Sources */,
-				4B7A59441F628968000AFCD0 /* PreFix.swift in Sources */,
+				4B7A59441F628968000AFCD0 /* Header.swift in Sources */,
 				18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */,
 				4B7A58F11F626F69000AFCD0 /* ZHomeTool.swift in Sources */,
 				18B46D621F62441900E13869 /* PersonalCenterVC.swift in Sources */,
@@ -579,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B7A58F51F62710C000AFCD0 /* HomeModels.swift in Sources */,
-				4B7A59451F628968000AFCD0 /* PreFix.swift in Sources */,
+				4B7A59451F628968000AFCD0 /* Header.swift in Sources */,
 				4B7A58F21F626F69000AFCD0 /* ZHomeTool.swift in Sources */,
 				18CEFE8A1F6127D3000A7F94 /* XrkSwiftTests.swift in Sources */,
 			);
@@ -725,6 +753,10 @@
 				DEVELOPMENT_TEAM = C3NGB9EK32;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/MBProgressHUD/MBProgressHUD.h\"",
+				);
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -750,6 +782,10 @@
 				DEVELOPMENT_TEAM = C3NGB9EK32;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pods/MBProgressHUD/MBProgressHUD.h\"",
+				);
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
