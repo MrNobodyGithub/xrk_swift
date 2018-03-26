@@ -13,4 +13,6 @@ target 'XrkSwift' do
     
     pod 'SDWebImage', '~> 4.0'
     pod 'MBProgressHUD', '~> 1.1.0'
+    
+    pod 'SDCycleScrollView','~> 1.66'
 end

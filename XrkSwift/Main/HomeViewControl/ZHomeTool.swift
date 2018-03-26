@@ -15,6 +15,16 @@ class ZHomeTool: NSObject {
     static func homeRequestCategory(params: AnyObject? = nil, success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: NSError) -> ())  {
         RequestTool.defaultTool.request(method: .get, urlString: URL_home_category, parameters: params, resultBlock: { (res) in
             
+            let b = BaseResult.deserialize(from: res)
+            let list: NSArray  = res!["datas"] as! NSArray
+            let mutArr = NSMutableArray.init()
+            for dic : NSDictionary in list as! [NSDictionary]  {
+                let model = HomeModelCategory.deserialize(from: dic)
+                mutArr.add(model ?? HomeModelCategory.init())
+            }
+            b?.array = mutArr.copy() as! NSArray
+            success(b ?? BaseResult.init())
+            
         }) { (err) in
             fail(err!)
         }

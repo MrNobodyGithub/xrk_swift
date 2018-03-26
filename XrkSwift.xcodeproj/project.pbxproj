@@ -20,7 +20,7 @@
 		18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEE51F61324E000A7F94 /* NavigationController.swift */; };
 		46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */; };
 		4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636632064AAD5002540BF /* HomeHeaderView.swift */; };
-		4B3636672064AE1F002540BF /* ZBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636662064AE1F002540BF /* ZBtn.swift */; };
+		4B3636672064AE1F002540BF /* ZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636662064AE1F002540BF /* ZButton.swift */; };
 		4B3636692064B17F002540BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636682064B17F002540BF /* Extension.swift */; };
 		4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */; };
 		4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBD22018383E0081ABDB /* ZMeTool.swift */; };
@@ -94,7 +94,7 @@
 		2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XrkSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAFNetworkingTool.swift; sourceTree = "<group>"; };
 		4B3636632064AAD5002540BF /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		4B3636662064AE1F002540BF /* ZBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBtn.swift; sourceTree = "<group>"; };
+		4B3636662064AE1F002540BF /* ZButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZButton.swift; sourceTree = "<group>"; };
 		4B3636682064B17F002540BF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCommonTool.swift; sourceTree = "<group>"; };
 		4B36FBD22018383E0081ABDB /* ZMeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMeTool.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		4B3636652064AE10002540BF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B3636662064AE1F002540BF /* ZBtn.swift */,
+				4B3636662064AE1F002540BF /* ZButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -584,7 +584,7 @@
 				4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */,
 				46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */,
 				18B46D641F62444100E13869 /* MerchantCenterVC.swift in Sources */,
-				4B3636672064AE1F002540BF /* ZBtn.swift in Sources */,
+				4B3636672064AE1F002540BF /* ZButton.swift in Sources */,
 				4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */,
 				4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */,
 				4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */,

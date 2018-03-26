@@ -27,7 +27,7 @@ class HomeListCell: UITableViewCell {
         
         cellTitle.text = model.store_name
         cellImage.sd_setImage(with: NSURL.init(string: model.store_avatar_url) as! URL)
-    
+        
     }
     
     

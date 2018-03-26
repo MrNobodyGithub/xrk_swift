@@ -17,7 +17,7 @@ class BaseResult: HandyJSON {
     var datas: (Any)? = nil
     var array: NSArray = []
     var dict = Dictionary<String, Any>()
-    
+    var error : String = ""
     var success:Bool{
         get{
             if code == 200 {

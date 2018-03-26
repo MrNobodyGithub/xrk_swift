@@ -56,6 +56,7 @@
                 <outlet property="cellImage" destination="C9p-r8-ESM" id="mXA-de-HAQ"/>
                 <outlet property="cellTitle" destination="8Ec-l3-DKd" id="QaI-be-tK1"/>
             </connections>
+            <point key="canvasLocation" x="34.5" y="55"/>
         </view>
     </objects>
 </document>

@@ -57,9 +57,6 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
 
         }
         
-       
-        
-        
         
     }
     func requestData() {
@@ -67,15 +64,27 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         requestDataList()
     }
     func  requestDataHeader()  {
-        
+        ZHomeTool.homeRequestCategory(success: { (res) in
+            
+            let result : BaseResult = res as! BaseResult
+            if  result.success {
+                self.headerView.dataArr = result.array
+            }else{
+                MBProgressHUD.hudShowMessage(curview: self.view, message: result.error)
+            }
+        }) { (err) in
+            MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
+        }
     }
     func requestDataList()  {
-        let url = URL_home_list
-        //        let model = HomeModelOne.init(area_id: "224")
+         //        let model = HomeModelOne.init(area_id: "224")
         //        var json = JSON.init(model)
         let m = HomeParamList(areaId: "224",curp: "0",pg:"10")
         let  json = JSON.init(m)
+        MBProgressHUD.zshow(view: self.view)
         ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
+            
+            MBProgressHUD.zhide(view: self.view)
             let result: BaseResult = res as! BaseResult
             if result.success {
                 self.dataArr = result.array
@@ -85,22 +94,21 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
             }
         }) { ( err) in
             
+            MBProgressHUD.zhide(view: self.view)
         }
     }
     func setupTableview()  {
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: MLScreenHeight - 0 - 49))
         self.view.addSubview(tableView)
-        tableView.backgroundColor = UIColor.cyan
+        tableView.backgroundColor = UIColor.white
         tableView.delegate = self as UITableViewDelegate
         tableView.dataSource = self as UITableViewDataSource
         
         //tableHeaderView
-
-        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: 200))
-        headerView.dataArr = ["a","b","a","b","a","b","a","b","a","b"]
-        tableView.tableHeaderView = headerView
+        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200))
+         tableView.tableHeaderView = headerView
         self.headerView = headerView
-        headerView.backgroundColor = UIColor.cyan
+        headerView.backgroundColor = RGB_arc_Color()
         
      }
     

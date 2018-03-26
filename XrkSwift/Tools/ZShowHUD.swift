@@ -17,15 +17,20 @@ class ZShowHud: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    //    required init?(coder aDecoder: NSCoder) {
-//        print("--fail zshowhud--")
-//    }
+    } 
     
     class func show(view: UIView!){
+        
         let v = ZShowHud.init(frame: view.bounds)
         view.addSubview(v)
-        v.backgroundColor = UIColor.red
+//        v.backgroundColor = UIColor.red
+        let activity = UIActivityIndicatorView.init()
+        activity.frame.size = CGSize.init(width: 40, height: 40)
+        activity.center = view.center
+        v.backgroundColor = RGBAColor(r: 0, g: 0, b: 0, a: 0.618)
+        v.addSubview(activity)
+        activity.activityIndicatorViewStyle = .whiteLarge
+        activity.startAnimating()
     }
     class func hide(view: UIView!){
         for v in view.subviews {
@@ -34,9 +39,6 @@ class ZShowHud: UIView {
             }
         }
         
-//        let v = ZShowHud.init(frame: view.bounds)
-//        view.addSubview(v)
-//        v.backgroundColor = UIColor.red
     }
     
     

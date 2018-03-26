@@ -19,6 +19,8 @@ PODS:
   - HandyJSON (1.8.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.13)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
   - SDWebImage (4.3.0):
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
@@ -31,6 +33,7 @@ DEPENDENCIES:
   - HandyJSON (~> 1.8.0)
   - MBProgressHUD (~> 1.1.0)
   - MJExtension
+  - SDCycleScrollView (~> 1.66)
   - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 3.1.4)
 
@@ -41,9 +44,10 @@ SPEC CHECKSUMS:
   HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 49a489877774aa6e3c6d2d1723ef23e24f3f2cde
+PODFILE CHECKSUM: d09724cafbf2fc04c549341677305ea839e966c8
 
 COCOAPODS: 1.2.1

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 class HomeHeaderView: UIView {
     override init(frame:CGRect){
         super.init(frame: frame)
@@ -27,7 +28,6 @@ class HomeHeaderView: UIView {
 //        }
         set{
             _dataArr = newValue
-            print("--%@--",_dataArr)
             setupViews(arr: dataArr!)
         }
         get{
@@ -36,19 +36,33 @@ class HomeHeaderView: UIView {
     }
     
     func setupViews(arr: NSArray)  {
-       
-         for i: Int in 0...10 {
+        
+         for i: Int in 0...arr.count-2 {
+            let model: HomeModelCategory = arr[i] as! HomeModelCategory
             let btnW:CGFloat = MLScreenWidth/5.0;
-            let btnH:CGFloat = 40.0;
+            let btnH:CGFloat = 100.0;
             var btnX:CGFloat = 0;
             var btnY:CGFloat = 0;
             
             btnX = (i % 5 ).cgfloat() * btnW
             btnY = (i/5).cgfloat() * btnH
-            let btn = UIButton.init(frame:CGRect.init(x: btnX, y: btnY, width: btnW, height: CGFloat(btnH)))
+            
+            let btn :ZButton = ZButton.init(frame:CGRect.init(x: btnX, y: btnY, width: btnW, height: CGFloat(btnH)))
+            
+            btn.imageView?.sd_setImage(with: URL.init(string: model.cn_pic), completed: { (image, err, Type, ur) in
+
+                btn.setImage(image, for: .normal)
+            })
              self.addSubview(btn)
-            btn.setTitle(i.string(), for: UIControlState.normal)
-            btn.backgroundColor = UIColor.gray
+            btn.setTitle(model.gc_name, for: UIControlState.normal)
+
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+            btn.setTitleColor(UIColor.black, for: UIControlState.normal)
+            btn.titleLabel?.textAlignment = NSTextAlignment.center
+            
+//            btn.imageView?.image = UIImage.init(named: "default");
+////            btn.imageView?.sd_setImage(with: URL.init(string: model.cn_pic))
+//            btn.imageView?.backgroundColor = UIColor.green
         }
         
         

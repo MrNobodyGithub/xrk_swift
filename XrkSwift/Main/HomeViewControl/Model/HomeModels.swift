@@ -41,6 +41,16 @@ class HomeModelList: HandyJSON {
     
 }
 
+class HomeModelCategory: HandyJSON {
+    var gc_id : String = ""
+    var gc_name : String = ""
+    var cn_pic : String = ""
+    
+    required init( ) {
+         
+    }
+}
+
 
 
 class HomeModelOne: NSObject {
@@ -67,12 +77,5 @@ class HomeModel {
         
     }
 }
-//class HomeModelList {
-//    var store_id: String
-//    var store_name: String
-//    init(json:JSON) {
-//        store_id = json["store_id"].stringValue
-//        store_name = json["store_name"].stringValue
-//    }
-//}
+
 

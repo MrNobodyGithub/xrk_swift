@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 extension Int{
     func string() -> String {
          return String(self)
@@ -16,3 +17,21 @@ extension Int{
          return CGFloat(self)
     }
 }
+extension UIView{
+    func zx() -> CFloat {
+        return CFloat(self.frame.origin.x)
+    }
+    
+    func zy() -> CFloat {
+        return CFloat(self.frame.origin.y)
+    }
+    
+    func zw() -> CFloat {
+        return CFloat(self.frame.size.width)
+    }
+    
+    func zh() -> CFloat {
+        return CFloat(self.frame.size.height)
+    }
+}
+
