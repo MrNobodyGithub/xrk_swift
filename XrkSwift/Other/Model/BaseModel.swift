@@ -33,7 +33,14 @@ class BaseResult: HandyJSON {
 
 
 class BaseParam: NSObject {
-    var key : String?
+    var key : String{
+        set{
+            self.key = newValue
+        }
+        get{
+            return ""
+        }
+    }
 }
 
 

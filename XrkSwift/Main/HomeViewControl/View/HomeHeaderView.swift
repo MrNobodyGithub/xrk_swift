@@ -9,17 +9,28 @@
 import Foundation
 import UIKit
 
-class HomeHeaderView: UIView {
+protocol HomeHeaderViewDelegate {
+//    var model : HomeModelCategory {get set}
+
+      func clickCategory(model: HomeModelCategory)
+}
+
+
+class HomeHeaderView: UIView{
     override init(frame:CGRect){
         super.init(frame: frame)
     }
     
+     var delegate : HomeHeaderViewDelegate?
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    var _dataArr: NSArray?
     
-    var dataArr:NSArray?{
+    let objc_key_btn_homecategory = "objc_key_btn_homecategory"
+    var _dataArrCategory: NSArray?
+    
+    var dataArrCategory:NSArray?{
 //        willset{
 //
 //        }
@@ -27,14 +38,22 @@ class HomeHeaderView: UIView {
 //
 //        }
         set{
-            _dataArr = newValue
-            setupViews(arr: dataArr!)
+            _dataArrCategory = newValue
+            setupViews(arr: dataArrCategory!)
         }
         get{
-            return _dataArr
+            return _dataArrCategory
         }
     }
     
+    func btnAction(btn:UIButton){
+//        let model : HomeModelCategory = objc_getAssociatedObject(btn, objc_key_btn_homecategory) as! HomeModelCategory
+        let model: HomeModelCategory = self.dataArrCategory![btn.tag - 10] as! HomeModelCategory
+        if self.delegate != nil {
+             self.delegate?.clickCategory(model: model)
+        }
+        
+    }
     func setupViews(arr: NSArray)  {
         
          for i: Int in 0...arr.count-2 {
@@ -60,12 +79,11 @@ class HomeHeaderView: UIView {
             btn.setTitleColor(UIColor.black, for: UIControlState.normal)
             btn.titleLabel?.textAlignment = NSTextAlignment.center
             
-//            btn.imageView?.image = UIImage.init(named: "default");
-////            btn.imageView?.sd_setImage(with: URL.init(string: model.cn_pic))
-//            btn.imageView?.backgroundColor = UIColor.green
+//            objc_setAssociatedObject(btn, objc_key_btn_homecategory, model, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            btn.tag = 10 + i
+            btn.addTarget(self, action: #selector(btnAction(btn:)), for: .touchUpInside)
+            
         }
-        
-        
         
     }
     

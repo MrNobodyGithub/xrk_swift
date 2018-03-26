@@ -9,24 +9,7 @@
 import UIKit
 import SwiftyJSON
 import HandyJSON
-//--------------param ---------------
-class HomeParamList: BaseParam {
-    //    &area_id=224&curpage=0&page=10
-    var area_id :String = ""
-    var curpage: String = ""
-    var page : String = ""
-    
-    
-    required init( areaId : String, curp: String, pg:String) {
-//        area_id = areaId
-//        curpage = curp
-//        page = pg
-        self.area_id = areaId
-        self.curpage = curp
-        self.page = pg
-        
-    }
-}
+
 
 //-----------------model------------------
 class HomeModelList: HandyJSON {
@@ -45,13 +28,16 @@ class HomeModelCategory: HandyJSON {
     var gc_id : String = ""
     var gc_name : String = ""
     var cn_pic : String = ""
-    
     required init( ) {
-         
     }
 }
-
-
+class HomeModelCycle: HandyJSON {
+    var banner_title : String = ""
+    var banner_img : String = ""
+    var banner_url : String = ""
+    required init( ) {
+    }
+}
 
 class HomeModelOne: NSObject {
     //    &area_id=224&curpage=0&page=10

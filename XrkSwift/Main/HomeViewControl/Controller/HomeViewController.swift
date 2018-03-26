@@ -12,7 +12,13 @@ import HandyJSON
 import AVKit
 import MBProgressHUD
 
-class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource{
+class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource ,HomeHeaderViewDelegate{
+    
+    // 代理方法  点击类别
+    func clickCategory(model: HomeModelCategory) {
+         print("--%@--",model.gc_name)
+    }
+    
     @IBOutlet weak var viewdown: UIView!
     
     var player_s :AVPlayer = AVPlayer.init()
@@ -68,7 +74,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
             
             let result : BaseResult = res as! BaseResult
             if  result.success {
-                self.headerView.dataArr = result.array
+                self.headerView.dataArrCategory = result.array
             }else{
                 MBProgressHUD.hudShowMessage(curview: self.view, message: result.error)
             }
@@ -105,8 +111,10 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         tableView.dataSource = self as UITableViewDataSource
         
         //tableHeaderView
-        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200))
+        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200 ))
+//        + MLScreenWidth/2.0
          tableView.tableHeaderView = headerView
+        headerView.delegate = self
         self.headerView = headerView
         headerView.backgroundColor = RGB_arc_Color()
         
@@ -132,6 +140,9 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    
+    //音频在线播放
     
     func kAudio( ) {
         let str = "http://fs.w.kugou.com/201803201552/bdf56716d06d36c70c98c6d664256d05/G129/M07/0F/1D/YZQEAFqEPxCAATmCADTDHJ21QXE192.mp3"
