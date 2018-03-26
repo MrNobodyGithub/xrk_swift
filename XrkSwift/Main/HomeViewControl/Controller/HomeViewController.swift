@@ -11,6 +11,8 @@ import SwiftyJSON
 import HandyJSON
 import AVKit
 import MBProgressHUD
+import MJRefresh
+
 
 class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource ,HomeHeaderViewDelegate{
     
@@ -35,10 +37,28 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
          basicConfigration()
          setupTableview()
          requestData()
+         setupRefresh()
     }
     func basicConfigration()  {
          self.title = "home"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(actionRightItem))
+    }
+    
+    func setupRefresh(){
+//         self.tableView.mj_header = MJRefreshNormalHeader.
+        
+        
+        let header = MJRefreshNormalHeader()
+        // 下拉刷新
+        header.setRefreshingTarget(self, refreshingAction: #selector(refreshUp))
+//        header.setRefreshingTarget(self, refreshingAction: Selector("headerRefresh"))
+        // 现在的版本要用mj_header
+        self.tableView.mj_header = header
+        
+    }
+    func refreshUp(){
+        requestData()
+        self.tableView.mj_header.endRefreshing()
     }
     
     func actionRightItem()  {

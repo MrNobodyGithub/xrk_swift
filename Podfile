@@ -15,4 +15,5 @@ target 'XrkSwift' do
     pod 'MBProgressHUD', '~> 1.1.0'
     
     pod 'SDCycleScrollView','~> 1.66'
+    pod 'MJRefresh'
 end
