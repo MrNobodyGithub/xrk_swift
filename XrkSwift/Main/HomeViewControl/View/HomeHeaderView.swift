@@ -82,7 +82,6 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
         let mutArr = NSMutableArray.init()
         for model : HomeModelCycle in arr as! [HomeModelCycle]  {
             mutArr.add(model.banner_img)
-            print("--test--",model.banner_img)
         }
         viewCycle.autoScrollTimeInterval = 5
         viewCycle.imageURLStringsGroup = mutArr.copy() as! [Any]

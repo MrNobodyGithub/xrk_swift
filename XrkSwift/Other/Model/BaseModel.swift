@@ -31,17 +31,27 @@ class BaseResult: HandyJSON {
     }
 }
 
+//var dataArrCycle :NSArray{
+//    set{
+//        _dataArrCycle  = newValue
+//        setupViewCycle(arr: newValue)
+//    }
+//    get {
+//        return _dataArrCycle!
+//    }
+//}
 
 class BaseParam: NSObject, HandyJSON {
-    var key : String{
+    var _key : NSString = ""
+    var key : NSString?{
         set{
-            self.key = newValue
+            _key = newValue as! NSString
         }
         get{
             return ""
         }
     }
-    required override init() {
+    required  override init() {
          
     }
 }
