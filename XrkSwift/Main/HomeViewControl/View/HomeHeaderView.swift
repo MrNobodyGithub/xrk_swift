@@ -8,43 +8,88 @@
 
 import Foundation
 import UIKit
+import SDCycleScrollView
 
 protocol HomeHeaderViewDelegate {
 //    var model : HomeModelCategory {get set}
 
       func clickCategory(model: HomeModelCategory)
+    func clickCycle(model: HomeModelCycle)
 }
 
 
-class HomeHeaderView: UIView{
+class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
+    
+    var viewCategory : UIView = UIView.init()
+    var viewCycle : SDCycleScrollView = SDCycleScrollView.init()
+    let h_cycle = MLScreenWidth/2.0
+    let h_category = 200
     override init(frame:CGRect){
         super.init(frame: frame)
+        
+        setupViewCycle()
+        setupViewCategory()
+        
     }
-    
-     var delegate : HomeHeaderViewDelegate?
-    
+    func setupViewCycle( )  {
+        let view = SDCycleScrollView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: h_cycle))
+        viewCycle = view
+        self.addSubview(view)
+        view.delegate = self
+        
+    }
+    func setupViewCategory( )  {
+        let view = UIView.init(frame: CGRect.init(x: 0, y: Int(h_cycle), width: Int(MLScreenWidth), height: h_category))
+        viewCategory = view
+        self.addSubview(view)
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let objc_key_btn_homecategory = "objc_key_btn_homecategory"
-    var _dataArrCategory: NSArray?
+     var delegate : HomeHeaderViewDelegate?
     
+
+    var _dataArrCycle : NSArray!
+    var dataArrCycle :NSArray{
+        set{
+            _dataArrCycle  = newValue
+            setupViewCycle(arr: newValue)
+        }
+        get {
+            return _dataArrCycle!
+        }
+    }
+    let objc_key_btn_homecategory = "objc_key_btn_homecategory"
+    
+    var _dataArrCategory: NSArray?
     var dataArrCategory:NSArray?{
-//        willset{
-//
-//        }
-//        didset{
-//
-//        }
+//        willset{  }
+//        didset{  }
         set{
             _dataArrCategory = newValue
-            setupViews(arr: dataArrCategory!)
+            setupViewsCategory(arr: dataArrCategory!)
         }
         get{
             return _dataArrCategory
         }
     }
+    func setupViewCycle(arr: NSArray){
+        let mutArr = NSMutableArray.init()
+        for model : HomeModelCycle in arr as! [HomeModelCycle]  {
+            mutArr.add(model.banner_img)
+            print("--test--",model.banner_img)
+        }
+        viewCycle.autoScrollTimeInterval = 5
+        viewCycle.imageURLStringsGroup = mutArr.copy() as! [Any]
+        viewCycle.adjustWhenControllerViewWillAppera()
+        viewCycle.placeholderImage = UIImage.init(named: "default")
+    }
+    
     
     func btnAction(btn:UIButton){
 //        let model : HomeModelCategory = objc_getAssociatedObject(btn, objc_key_btn_homecategory) as! HomeModelCategory
@@ -54,7 +99,7 @@ class HomeHeaderView: UIView{
         }
         
     }
-    func setupViews(arr: NSArray)  {
+    func setupViewsCategory(arr: NSArray)  {
         
          for i: Int in 0...arr.count-2 {
             let model: HomeModelCategory = arr[i] as! HomeModelCategory
@@ -72,7 +117,8 @@ class HomeHeaderView: UIView{
 
                 btn.setImage(image, for: .normal)
             })
-             self.addSubview(btn)
+//             self.addSubview(btn)
+            viewCategory.addSubview(btn)
             btn.setTitle(model.gc_name, for: UIControlState.normal)
 
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
@@ -85,6 +131,14 @@ class HomeHeaderView: UIView{
             
         }
         
+    }
+    
+    //cycle delegate
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        let model = _dataArrCycle[index]
+        if self.delegate != nil {
+            self.delegate?.clickCycle(model: model as! HomeModelCycle)
+        }
     }
     
     

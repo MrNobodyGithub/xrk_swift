@@ -12,12 +12,11 @@ import UIKit
 let MLScreenWidth = UIScreen.main.bounds.size.width
 let MLScreenHeight  = UIScreen.main.bounds.size.height
  
-//
-//#define MLStatusBarHeight     [[UIApplication sharedApplication] statusBarFrame].size.height
-//
-//#define MLNavigationBarHeight self.navigationController.navigationBar.frame.size.height
-//// tableBar的高度
-//#define MLTabBarHeight self.tabBarController.tabBar.frame.size.height
+
+
+// mbprogresshud  提示文案
+let MESSAGE_newwork_fail = "网络不佳"
+
 
 func RGBColor(r:CGFloat, g:CGFloat, b:CGFloat ) -> UIColor{
     

@@ -14,11 +14,7 @@ import MBProgressHUD
 
 class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource ,HomeHeaderViewDelegate{
     
-    // 代理方法  点击类别
-    func clickCategory(model: HomeModelCategory) {
-         print("--%@--",model.gc_name)
-    }
-    
+  
     @IBOutlet weak var viewdown: UIView!
     
     var player_s :AVPlayer = AVPlayer.init()
@@ -62,14 +58,29 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
             })
 
         }
-        
-        
+         
     }
     func requestData() {
-        requestDataHeader()
+        requestDataHeaderCategory()
+        requestDataHeaderCycle()
         requestDataList()
     }
-    func  requestDataHeader()  {
+    func requestDataHeaderCycle()  {
+        let param = HomeParamCycle.init(gc_id: "0")
+        let json = param.toJSON()
+        ZHomeTool.homeRequestCycle(params: json as AnyObject, success: { ( res) in
+            let b : BaseResult = res as! BaseResult
+            if b.success == true{
+                self.headerView.dataArrCycle = b.array
+             }else{
+                
+            }
+            
+        }) { (err) in
+            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_newwork_fail)
+        }
+    }
+    func requestDataHeaderCategory()  {
         ZHomeTool.homeRequestCategory(success: { (res) in
             
             let result : BaseResult = res as! BaseResult
@@ -83,11 +94,13 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         }
     }
     func requestDataList()  {
-         //        let model = HomeModelOne.init(area_id: "224")
-        //        var json = JSON.init(model)
-        let m = HomeParamList(areaId: "224",curp: "0",pg:"10")
-        let  json = JSON.init(m)
+        
+        let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
+        let json = m.toJSON()
         MBProgressHUD.zshow(view: self.view)
+        
+        
+        
         ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
             
             MBProgressHUD.zhide(view: self.view)
@@ -111,13 +124,10 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         tableView.dataSource = self as UITableViewDataSource
         
         //tableHeaderView
-        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200 ))
-//        + MLScreenWidth/2.0
+        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200 + MLScreenWidth/2.0 ))
          tableView.tableHeaderView = headerView
         headerView.delegate = self
         self.headerView = headerView
-        headerView.backgroundColor = RGB_arc_Color()
-        
      }
     
     //代理方法
@@ -152,5 +162,13 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         player.play()
 
     }
+    // 代理方法 点击cycle 点击类别
+    func clickCycle(model: HomeModelCycle) {
+        print("--cycle--",model.banner_title)
+    }
+    func clickCategory(model: HomeModelCategory) {
+        print("--%@--",model.gc_name)
+    }
+
     
 }

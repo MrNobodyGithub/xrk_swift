@@ -22,8 +22,11 @@ class HomeParamList: BaseParam {
         self.area_id = areaId
         self.curpage = curp
         self.page = pg
-        
-        //        area_id=224&gc_id=0
+         
+    }
+    
+    required init() {
+        fatalError("init() has not been implemented")
     }
 }
 class HomeParamCycle: BaseParam {
@@ -32,4 +35,9 @@ class HomeParamCycle: BaseParam {
     required init(gc_id : String) {
          self.gc_id = gc_id
     }
+    
+    required init() {
+        fatalError("init() has not been implemented")
+    }
+    
 }

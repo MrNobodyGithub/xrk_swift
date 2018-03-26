@@ -32,7 +32,7 @@ class BaseResult: HandyJSON {
 }
 
 
-class BaseParam: NSObject {
+class BaseParam: NSObject, HandyJSON {
     var key : String{
         set{
             self.key = newValue
@@ -40,6 +40,9 @@ class BaseParam: NSObject {
         get{
             return ""
         }
+    }
+    required override init() {
+         
     }
 }
 

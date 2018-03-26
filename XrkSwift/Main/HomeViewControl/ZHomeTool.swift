@@ -19,13 +19,11 @@ class ZHomeTool: NSObject {
             let list : NSDictionary = res!["datas"] as! NSDictionary
             let bannerList: NSArray = list["banner_position_list"] as! NSArray
             let arra:NSArray = bannerList[0] as! NSArray
-            let arrB : NSArray = arra[0] as! NSArray
-            
-//            ["banner_position_list"][0][0]
+ 
             let mutArr = NSMutableArray.init()
-            for dict : NSDictionary in arrB as! [NSDictionary]{
-                let model = HomeModelCycle.deserialize(from: dict)
-                mutArr.add(model ?? HomeModelCycle.init())
+            for dict : NSDictionary in arra as! [NSDictionary]{
+                let model : HomeModelCycle = HomeModelCycle.deserialize(from: dict)!
+                mutArr.add(model)
             }
             b?.array = mutArr.copy() as! NSArray
             success(b ?? BaseResult.init())
