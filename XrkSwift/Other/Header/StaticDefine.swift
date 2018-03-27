@@ -43,4 +43,12 @@ func swapTwoValues<T>(_ a: inout T, _ b: inout T){
     a = b
     b = temporaryA
 }
+func zswap<T> (_ a: inout T, _ b :inout T){
+    let str = String(describing: a) + "  " + String(describing: b)
+    let tem = a
+    a = b
+    b = tem
+    let stra = str + "->" + String(describing: a) + "  " + String(describing: b)
+    print(stra)
+}
 

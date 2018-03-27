@@ -23,7 +23,7 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
     var viewCategory : UIView = UIView.init()
     var viewCycle : SDCycleScrollView = SDCycleScrollView.init()
     let h_cycle = MLScreenWidth/2.0
-    let h_category = 200
+    let h_category = 240
     override init(frame:CGRect){
         super.init(frame: frame)
         
@@ -83,7 +83,7 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
         for model : HomeModelCycle in arr as! [HomeModelCycle]  {
             mutArr.add(model.banner_img)
         }
-        viewCycle.autoScrollTimeInterval = 5
+        viewCycle.autoScrollTimeInterval = 3.5
         viewCycle.imageURLStringsGroup = mutArr.copy() as! [Any]
         viewCycle.adjustWhenControllerViewWillAppera()
         viewCycle.placeholderImage = UIImage.init(named: "default")
@@ -105,10 +105,10 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
             let btnW:CGFloat = MLScreenWidth/5.0;
             let btnH:CGFloat = 100.0;
             var btnX:CGFloat = 0;
-            var btnY:CGFloat = 0;
+            var btnY:CGFloat = 25;
             
             btnX = (i % 5 ).cgfloat() * btnW
-            btnY = (i/5).cgfloat() * btnH
+            btnY += (i/5).cgfloat() * btnH
             
             let btn :ZButton = ZButton.init(frame:CGRect.init(x: btnX, y: btnY, width: btnW, height: CGFloat(btnH)))
             

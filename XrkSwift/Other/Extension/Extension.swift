@@ -18,6 +18,9 @@ extension Int{
     }
 }
 extension UIView{
+    func zsetX(x:CGFloat){
+        self.frame.origin = CGPoint.init(x: x, y: self.frame.origin.y)
+    }
     func zx() -> CFloat {
         return CFloat(self.frame.origin.x)
     }

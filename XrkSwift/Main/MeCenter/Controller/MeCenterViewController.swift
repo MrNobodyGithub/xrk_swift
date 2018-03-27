@@ -27,8 +27,11 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
         TitleArray()
         setupUI()
-        
         requestData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true;
     }
     func requestData()  {
         let param  = BaseParam()
@@ -39,18 +42,14 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         
         ZMETool.meRequest(params: (dict as? [String : Any])) { ( res) in
-//
         }
      }
         
     func TitleArray(){
-    
         self.meTabTitle = ["我的订单","我的收藏","申请服务商","帮助与反馈","优惠券","消息","设置"]
         self.meTabeImage = ["merchantOrder","myCollection","myServerPro","myHelp","YouHQ","registerVercode","mySetting"]
         
     }
-    
-    
     
     func setupUI()  {
         //创建tab
@@ -80,16 +79,16 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: MeCellId)
         cell.textLabel?.text = self.meTabTitle[indexPath.row] as? String
         cell.imageView?.image = UIImage.init(named: self.meTabeImage[indexPath.row] as! String)
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone
-
-        
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)//点击完成高亮
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = MeCollTableViewController.init(style: .plain)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
+ 
     
 }
 

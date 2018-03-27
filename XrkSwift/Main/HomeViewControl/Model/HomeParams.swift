@@ -16,9 +16,6 @@ class HomeParamList: BaseParam {
     
     
     required init( areaId : String, curp: String, pg:String) {
-        //        area_id = areaId
-        //        curpage = curp
-        //        page = pg
         self.area_id = areaId
         self.curpage = curp
         self.page = pg

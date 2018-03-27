@@ -63,6 +63,14 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
     func actionRightItem()  {
         
+        var aa : CGFloat = 10.0
+        var bb : CGFloat = 23.0
+        var stra = "a"
+        var strb = "b"
+        
+        zswap(&aa, &bb)
+        zswap(&stra, &strb)
+        
         
         ZShowHud.show(view: self.view)
         
@@ -117,6 +125,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         
         let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
         let json = m.toJSON()
+        
         MBProgressHUD.zshow(view: self.view)
         
         
@@ -144,7 +153,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         tableView.dataSource = self as UITableViewDataSource
         
         //tableHeaderView
-        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:200 + MLScreenWidth/2.0 ))
+        let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:240 + MLScreenWidth/2.0 ))
          tableView.tableHeaderView = headerView
         headerView.delegate = self
         self.headerView = headerView

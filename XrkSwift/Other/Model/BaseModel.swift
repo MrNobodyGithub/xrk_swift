@@ -48,7 +48,7 @@ class BaseParam: NSObject, HandyJSON {
             _key = newValue as! NSString
         }
         get{
-            return ""
+            return "70f26291a79dc1600cfc6a7e4bf98592"
         }
     }
     required  override init() {

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18B46D621F62441900E13869 /* PersonalCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46D611F62441900E13869 /* PersonalCenterVC.swift */; };
-		18B46D641F62444100E13869 /* MerchantCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46D631F62444100E13869 /* MerchantCenterVC.swift */; };
 		18B46D761F627AC200E13869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B46D751F627AC200E13869 /* Assets.xcassets */; };
 		18CEFE751F6127D3000A7F94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFE741F6127D3000A7F94 /* AppDelegate.swift */; };
 		18CEFE7F1F6127D3000A7F94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CEFE7D1F6127D3000A7F94 /* LaunchScreen.storyboard */; };
@@ -39,6 +37,11 @@
 		4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */; };
 		4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A96EF205A3DA20043062D /* HomeListCell.xib */; };
 		4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96F1205A57E50043062D /* ZShowHUD.swift */; };
+		4B9ED734206A30FB00FF867D /* HomeCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED733206A30FB00FF867D /* HomeCategoryListVC.swift */; };
+		4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED73D206A348C00FF867D /* MeCollTableViewController.swift */; };
+		4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9ED73E206A348C00FF867D /* MeCollTableViewController.xib */; };
+		4B9ED744206A376000FF867D /* MeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED743206A376000FF867D /* MeParams.swift */; };
+		4B9ED746206A376A00FF867D /* MeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED745206A376A00FF867D /* MeModels.swift */; };
 		4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCDE9B2068C56100C49039 /* HomeParams.swift */; };
 		4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50E7F20610DF300B983B4 /* AVKit.framework */; };
 		A708A6F6D0684F3B00584FF0 /* Pods_XrkSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -75,8 +78,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		18B46D611F62441900E13869 /* PersonalCenterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalCenterVC.swift; sourceTree = "<group>"; };
-		18B46D631F62444100E13869 /* MerchantCenterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantCenterVC.swift; sourceTree = "<group>"; };
 		18B46D751F627AC200E13869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CEFE711F6127D3000A7F94 /* XrkSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XrkSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CEFE741F6127D3000A7F94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +114,11 @@
 		4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCellView.swift; sourceTree = "<group>"; };
 		4B8A96EF205A3DA20043062D /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		4B8A96F1205A57E50043062D /* ZShowHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZShowHUD.swift; sourceTree = "<group>"; };
+		4B9ED733206A30FB00FF867D /* HomeCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryListVC.swift; sourceTree = "<group>"; };
+		4B9ED73D206A348C00FF867D /* MeCollTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCollTableViewController.swift; sourceTree = "<group>"; };
+		4B9ED73E206A348C00FF867D /* MeCollTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewController.xib; sourceTree = "<group>"; };
+		4B9ED743206A376000FF867D /* MeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeParams.swift; sourceTree = "<group>"; };
+		4B9ED745206A376A00FF867D /* MeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModels.swift; sourceTree = "<group>"; };
 		4BBCDE9B2068C56100C49039 /* HomeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParams.swift; sourceTree = "<group>"; };
 		4BE50E7F20610DF300B983B4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B77260DFD7841D17FDBDC96C /* Pods-XrkSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,10 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				4B36FBD22018383E0081ABDB /* ZMeTool.swift */,
+				18CEFEFD1F614EB2000A7F94 /* Controller */,
 				18CEFEFE1F614EB2000A7F94 /* Model */,
 				18CEFEFC1F614EB2000A7F94 /* View */,
-				18CEFEFD1F614EB2000A7F94 /* Controller */,
-				18CEFEAE1F612D7F000A7F94 /* MeCenterViewController.swift */,
 			);
 			path = MeCenter;
 			sourceTree = "<group>";
@@ -275,8 +280,9 @@
 		18CEFEFD1F614EB2000A7F94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18B46D611F62441900E13869 /* PersonalCenterVC.swift */,
-				18B46D631F62444100E13869 /* MerchantCenterVC.swift */,
+				18CEFEAE1F612D7F000A7F94 /* MeCenterViewController.swift */,
+				4B9ED73D206A348C00FF867D /* MeCollTableViewController.swift */,
+				4B9ED73E206A348C00FF867D /* MeCollTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +290,8 @@
 		18CEFEFE1F614EB2000A7F94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B9ED743206A376000FF867D /* MeParams.swift */,
+				4B9ED745206A376A00FF867D /* MeModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				4B7A593D1F6286D1000AFCD0 /* HomeViewController.swift */,
+				4B9ED733206A30FB00FF867D /* HomeCategoryListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -505,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */,
+				4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */,
 				18CEFE7F1F6127D3000A7F94 /* LaunchScreen.storyboard in Resources */,
 				18B46D761F627AC200E13869 /* Assets.xcassets in Resources */,
 			);
@@ -580,28 +590,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3636692064B17F002540BF /* Extension.swift in Sources */,
+				4B9ED734206A30FB00FF867D /* HomeCategoryListVC.swift in Sources */,
 				4B8A96EC205A37B30043062D /* BaseModel.swift in Sources */,
 				4B36FBD820186FF10081ABDB /* StaticDefine.swift in Sources */,
 				18CEFE751F6127D3000A7F94 /* AppDelegate.swift in Sources */,
 				18CEFEAF1F612D7F000A7F94 /* MeCenterViewController.swift in Sources */,
 				4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */,
 				46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */,
-				18B46D641F62444100E13869 /* MerchantCenterVC.swift in Sources */,
 				4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */,
 				4B3636672064AE1F002540BF /* ZButton.swift in Sources */,
 				4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */,
+				4B9ED744206A376000FF867D /* MeParams.swift in Sources */,
 				4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */,
 				4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */,
 				4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */,
+				4B9ED746206A376A00FF867D /* MeModels.swift in Sources */,
 				18CEFEA91F612D28000A7F94 /* BaseViewController.swift in Sources */,
 				4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */,
 				4B7A593F1F6286D1000AFCD0 /* HomeViewController.swift in Sources */,
 				18CEFEB11F612D98000A7F94 /* PlaceAnOrderVC.swift in Sources */,
 				4B7A58D91F62372D000AFCD0 /* ZHttpTool.swift in Sources */,
 				4B7A59441F628968000AFCD0 /* Header.swift in Sources */,
+				4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */,
 				18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */,
 				4B7A58F11F626F69000AFCD0 /* ZHomeTool.swift in Sources */,
-				18B46D621F62441900E13869 /* PersonalCenterVC.swift in Sources */,
 				4B7A58F41F62710C000AFCD0 /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
