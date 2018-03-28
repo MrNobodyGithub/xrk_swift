@@ -8,15 +8,17 @@
 
 import UIKit
 
-class MeParamColl: BaseParam {
-    var curpage : Int = 0
-    var page : Int = 2
-    required init(curpage: Int, page: Int) {
-        self.curpage = curpage
-        self.page = page;
+class MeParamColl: BasePage {
+}
+
+class MeParamCollCancle: BaseParam {
+    var fav_id : String
+    required init(favid: String) {
+        self.fav_id = favid
     }
     
-    required override init() {
+    required init() {
         fatalError("init() has not been implemented")
     }
 }
+

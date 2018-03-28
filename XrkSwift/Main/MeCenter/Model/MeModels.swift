@@ -7,7 +7,19 @@
 //
 
 import UIKit
+import HandyJSON
 
 class MeModels: NSObject {
 
+}
+
+class MeModelCol: HandyJSON { 
+    
+    var goods_image :String = ""
+    var goods_id :String = ""
+    var goods_name: String = ""
+    var goods_jingle: String = ""
+    required init() {
+    }
+    
 }

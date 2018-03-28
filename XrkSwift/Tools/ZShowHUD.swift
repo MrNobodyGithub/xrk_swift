@@ -77,7 +77,7 @@ extension MBProgressHUD{
     }
 
      //展示 loding 以及 文案
-    class func hudShowMessage(curview: UIView?, message: String) -> MBProgressHUD {
+    class func hudShowMessage(curview: UIView?, message: String)  {
         var view = UIView.init()
         if curview == nil{
             view = UIApplication.shared.windows.last!
@@ -88,14 +88,14 @@ extension MBProgressHUD{
         hud.label.text = message
         hud.removeFromSuperViewOnHide = true;
         hud.dimBackground = true
-        return hud
+//        return hud
     }
     class func hudHid(curview: UIView! ){
         self.hide(for: curview, animated: true)
     }
   
     // 快速 展示 关闭
-    class func zshow(view: UIView?){
+    class func zshow(view: UIView?){ 
         self.showAdded(to: view!, animated: true);
     }
     class func zhide(view: UIView?){

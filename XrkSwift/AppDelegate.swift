@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        ZHTTPTool().netWorkReachability()
  
         let tabbarC = UITabBarController.init()
         tabbar = tabbarC

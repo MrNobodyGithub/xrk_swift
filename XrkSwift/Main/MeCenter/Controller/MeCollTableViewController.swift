@@ -8,50 +8,92 @@
 
 import UIKit
 
+import MBProgressHUD
+
 class MeCollTableViewController: UITableViewController {
-        
+    
+    
+    var dataArr : NSArray = NSArray.init()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false;
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         base()
         requetaData()
     }
     func requetaData(){
-        let param = MeParamColl.init(curpage: 1, page: 10)
-//        param.toJSON()
-        
-        
-//        let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
-//        let json = m.toJSON()
+        let param = MeParamColl.init()
+        param.curpage = 1
+        param.page = 10
+//        param.key = "asdf"
+//        param._key = "ujnujn"
+        let json = param.toJSON()
+        MBProgressHUD.zshow(view: self.view)
+        ZMETool.meRequestCol(params: json!, success: { (res) in
+            MBProgressHUD.zhide(view: self.view)
+            let result:BaseResult =  res as! BaseResult
+            if result.success {
+                self.dataArr = result.array
+                self.tableView.reloadData()
+            }else{
+
+            }
+        }) { (err) in
+            MBProgressHUD.zhide(view: self.view)
+            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
+        }
         
     }
     func base(){
         
+        self.title = "coll"
+        self.z_navLeftItem(target: self, action: #selector(z_back))
+         
         self.clearsSelectionOnViewWillAppear = false
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80;
     }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dataArr.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = MeCollTableViewCell.cellWith(tableView: tableView)
+        let model = self.dataArr[indexPath.row] as! MeModelCol
+        cell.model = model
+        
+        weak var weakself = self
+        cell.block = { model in
+            let a : MeModelCol = model
+            weakself?.cellQuit(strid: model.goods_id)
+        }
         return cell
     }
-    */
+    
+    func cellQuit(strid: String)  {
+        let param = MeParamCollCancle.init(favid: strid)
+        
+        ZMETool.meRequestColCancle(params: param.toJSON() as Any, success: { (res) in
+            let result:BaseResult =  res as! BaseResult
+            if result.success {
+               MBProgressHUD.hudShowSuccess(curview: self.view, text: "取消成功")
+                self.requetaData()
+            }else{
+                
+            }
+        }) { (err) in
+            
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

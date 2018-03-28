@@ -42,20 +42,21 @@ class BaseResult: HandyJSON {
 //}
 
 class BaseParam: NSObject, HandyJSON {
-    var _key : NSString = ""
-    var key : NSString?{
-        set{
-            _key = newValue as! NSString
-        }
-        get{
-            return "70f26291a79dc1600cfc6a7e4bf98592"
-        }
-    }
+    var key = ZCommonTool.UserKey()
+
     required  override init() {
          
     }
 }
 
+class BasePage: BaseParam{
+    var curpage : Int = 0
+    var page : Int = 0
+    required init() {
+        
+    }
+    
+}
 
  
 

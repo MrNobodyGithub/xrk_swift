@@ -105,7 +105,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
             }
             
         }) { (err) in
-            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_newwork_fail)
+            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
         }
     }
     func requestDataHeaderCategory()  {
@@ -126,10 +126,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
         let json = m.toJSON()
         
-        MBProgressHUD.zshow(view: self.view)
-        
-        
-        
+        MBProgressHUD.zshow(view: self.view) 
         ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
             
             MBProgressHUD.zhide(view: self.view)

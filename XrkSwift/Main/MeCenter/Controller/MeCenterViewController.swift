@@ -25,23 +25,26 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TitleArray()
+        base()
         setupUI()
         requestData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true;
+        self.meHeardView?.backgroundColor = RGB_arc_Color()
+
     }
+    
+    func base(){
+        TitleArray()
+        
+    }
+    
     func requestData()  {
         let param  = BaseParam()
-        param.key = "0d70d08abff704369a461b1f4f852e80"
-        
-        let dict = NSMutableDictionary.init()
-        dict["key"] = nil
-
-        
-        ZMETool.meRequest(params: (dict as? [String : Any])) { ( res) in
+        let json = param.toJSON()
+        ZMETool.meRequest(params: (json as? [String : Any])) { ( res) in
         }
      }
         
@@ -65,7 +68,7 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //创建Tabheard
         self.meHeardView = UIView(frame:
             CGRect(x:0, y:0, width:self.meTabView!.frame.size.width, height:180))
-        self.meHeardView?.backgroundColor = UIColor.red
+        self.meHeardView?.backgroundColor = RGB_arc_Color()
         self.meTabView?.tableHeaderView = self.meHeardView
     }
 
@@ -85,6 +88,8 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = MeCollTableViewController.init(style: .plain)
+//        let nav = UINavigationController.init(rootViewController: vc)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

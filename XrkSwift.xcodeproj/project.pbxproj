@@ -43,6 +43,8 @@
 		4B9ED744206A376000FF867D /* MeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED743206A376000FF867D /* MeParams.swift */; };
 		4B9ED746206A376A00FF867D /* MeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED745206A376A00FF867D /* MeModels.swift */; };
 		4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCDE9B2068C56100C49039 /* HomeParams.swift */; };
+		4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */; };
+		4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */; };
 		4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50E7F20610DF300B983B4 /* AVKit.framework */; };
 		A708A6F6D0684F3B00584FF0 /* Pods_XrkSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
@@ -120,6 +122,9 @@
 		4B9ED743206A376000FF867D /* MeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeParams.swift; sourceTree = "<group>"; };
 		4B9ED745206A376A00FF867D /* MeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModels.swift; sourceTree = "<group>"; };
 		4BBCDE9B2068C56100C49039 /* HomeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParams.swift; sourceTree = "<group>"; };
+		4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCollTableViewCell.swift; sourceTree = "<group>"; };
+		4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewCell.xib; sourceTree = "<group>"; };
+		4BDBC3B7206B7382006002AA /* note_for_me.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = note_for_me.md; sourceTree = "<group>"; };
 		4BE50E7F20610DF300B983B4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B77260DFD7841D17FDBDC96C /* Pods-XrkSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D593122B90D8639A547AF65A /* Pods-XrkSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +278,8 @@
 		18CEFEFC1F614EB2000A7F94 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */,
+				4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 				4B8509B720528C0D00D2CE61 /* OcSwiftBridgeObject.h */,
 				4B8509B820528C0D00D2CE61 /* OcSwiftBridgeObject.m */,
 				4B8509B620528C0C00D2CE61 /* XrkSwift-Bridging-Header.h */,
+				4BDBC3B7206B7382006002AA /* note_for_me.md */,
 			);
 			path = File;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 			files = (
 				4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */,
 				4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */,
+				4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */,
 				18CEFE7F1F6127D3000A7F94 /* LaunchScreen.storyboard in Resources */,
 				18B46D761F627AC200E13869 /* Assets.xcassets in Resources */,
 			);
@@ -614,6 +623,7 @@
 				4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */,
 				18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */,
 				4B7A58F11F626F69000AFCD0 /* ZHomeTool.swift in Sources */,
+				4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */,
 				4B7A58F41F62710C000AFCD0 /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

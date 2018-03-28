@@ -10,8 +10,27 @@ import Foundation
 
 import SwiftyJSON
 import AFNetworking
- 
+
+class NetWorkReacability: AFNetworkReachabilityManager{
+
+    
+    let man = NetWorkReacability.shared() 
+    
+//    NetWorkReacability.sharedManager.startMonitoring
+    
+//    AFNetworkReachabilityManager
+//    let mang = NetWorkReacability.shared()
+    
+    
+//    // 1.获得网络监控的管理者
+//    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+//    // 2.设置网络状态改变后的处理
+//    [[AFNetworkReachabilityManager sharedManager]  setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {}]
+    
+}
+
 class RequestTool : AFHTTPSessionManager{
+    
     
     static let defaultTool : RequestTool = {
         let tools = RequestTool() 

@@ -14,6 +14,12 @@ class ZCommonTool {
     static func alertWithDetail(detail: String ) {
         let alert =  UIAlertView.init(title: "remind", message: detail, delegate: nil, cancelButtonTitle: "cancle")
         alert.show()
-}
+       
+    }
+    
+    static func UserKey() -> NSString{
+        //zuserkey
+        return "6446843dc4246cf03681e1d2d385f9f6"
+    }
     
 }
