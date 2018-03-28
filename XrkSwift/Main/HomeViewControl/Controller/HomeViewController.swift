@@ -41,18 +41,13 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     }
     func basicConfigration()  {
          self.title = "home"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(actionRightItem))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(btnActionRightItem))
     }
     
     func setupRefresh(){
-//         self.tableView.mj_header = MJRefreshNormalHeader.
-        
-        
+  
         let header = MJRefreshNormalHeader()
-        // 下拉刷新
         header.setRefreshingTarget(self, refreshingAction: #selector(refreshUp))
-//        header.setRefreshingTarget(self, refreshingAction: Selector("headerRefresh"))
-        // 现在的版本要用mj_header
         self.tableView.mj_header = header
         
     }
@@ -61,28 +56,18 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         self.tableView.mj_header.endRefreshing()
     }
     
-    func actionRightItem()  {
-        
-        var aa : CGFloat = 10.0
-        var bb : CGFloat = 23.0
-        var stra = "a"
-        var strb = "b"
-        
-        zswap(&aa, &bb)
-        zswap(&stra, &strb)
-        
-        
-        ZShowHud.show(view: self.view)
+    func btnActionRightItem()  { 
+//        ZShowHud.show(view: self.view)
         
 //        MBProgressHUD.zshow(view: self.view)
 //        MBProgressHUD.showAdded(to: self.view, animated: true)
 //        MBProgressHUD.hudShowMessage(curview: self.view, message: "adsf")
         DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 2) {
             DispatchQueue.main.async(execute: {
-                ZShowHud.hide(view: self.view)
+//                ZShowHud.hide(view: self.view)
 //                MBProgressHUD.zhide(view: self.view)
 //                MBProgressHUD.hudHid(curview: self.view)
-//                MBProgressHUD.hide(for: self.view, animated: true)
+                MBProgressHUD.hide(for: self.view, animated: true)
             })
 
         }
@@ -105,7 +90,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
             }
             
         }) { (err) in
-            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
+//            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
         }
     }
     func requestDataHeaderCategory()  {
@@ -118,7 +103,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
                 MBProgressHUD.hudShowMessage(curview: self.view, message: result.error)
             }
         }) { (err) in
-            MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
+//            MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
         }
     }
     func requestDataList()  {

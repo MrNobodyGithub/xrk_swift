@@ -66,19 +66,22 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
     }
     let objc_key_btn_homecategory = "objc_key_btn_homecategory"
     
-    var _dataArrCategory: NSArray?
+//    var _dataArrCategory: NSArray?
     var dataArrCategory:NSArray?{
-//        willset{  }
-//        didset{  }
-        set{
-            _dataArrCategory = newValue
+//        willSet{  }
+        didSet{
             setupViewsCategory(arr: dataArrCategory!)
         }
-        get{
-            return _dataArrCategory
-        }
+        //        set{
+//            _dataArrCategory = newValue
+//            setupViewsCategory(arr: dataArrCategory!)
+//        }
+//        get{
+//            return _dataArrCategory
+//        }
     }
-    func setupViewCycle(arr: NSArray){
+    func setupViewCycle(arr: NSArray){ 
+       
         let mutArr = NSMutableArray.init()
         for model : HomeModelCycle in arr as! [HomeModelCycle]  {
             mutArr.add(model.banner_img)
@@ -99,6 +102,10 @@ class HomeHeaderView: UIView, SDCycleScrollViewDelegate{
         
     }
     func setupViewsCategory(arr: NSArray)  {
+        
+        for view : UIView in viewCategory.subviews {
+            view.removeFromSuperview()
+        }
         
          for i: Int in 0...arr.count-2 {
             let model: HomeModelCategory = arr[i] as! HomeModelCategory
