@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -60,7 +59,6 @@
                     <constraint firstItem="AHh-99-OvT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zgU-b4-Fdb"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="AOc-k4-K4j"/>
             <connections>
                 <outlet property="cellImageV" destination="AHh-99-OvT" id="QYX-bK-n9q"/>
                 <outlet property="cellLab" destination="zE2-JK-K3n" id="dG4-Yu-XB1"/>

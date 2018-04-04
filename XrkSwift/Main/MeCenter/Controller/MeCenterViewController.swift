@@ -21,8 +21,6 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var  meTabeImage:NSArray = []
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         base()
@@ -35,25 +33,17 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.meHeardView?.backgroundColor = RGB_arc_Color()
 
     }
-    
     func base(){
-        TitleArray()
-        
+        self.meTabTitle = ["我的订单","我的收藏","申请服务商","帮助与反馈","优惠券","消息","设置"]
+        self.meTabeImage = ["merchantOrder","myCollection","myServerPro","myHelp","YouHQ","registerVercode","mySetting"]
     }
-    
     func requestData()  {
         let param  = BaseParam()
         let json = param.toJSON()
-        ZMETool.meRequest(params: (json as? [String : Any])) { ( res) in
-        }
+//        ZMETool.meRequest(params: (json as? [String : Any])) { ( res) in
+//        }
      }
-        
-    func TitleArray(){
-        self.meTabTitle = ["我的订单","我的收藏","申请服务商","帮助与反馈","优惠券","消息","设置"]
-        self.meTabeImage = ["merchantOrder","myCollection","myServerPro","myHelp","YouHQ","registerVercode","mySetting"]
-        
-    }
-    
+
     func setupUI()  {
         //创建tab
         self.meTabView = UITableView(frame:view.bounds,style: UITableViewStyle.plain)
@@ -71,7 +61,7 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.meHeardView?.backgroundColor = RGB_arc_Color()
         self.meTabView?.tableHeaderView = self.meHeardView
     }
-
+//-------------uitableview delegate------
     //table的行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.meTabTitle.count)
@@ -88,12 +78,9 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = MeCollTableViewController.init(style: .plain)
-//        let nav = UINavigationController.init(rootViewController: vc)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
- 
     
 }
 

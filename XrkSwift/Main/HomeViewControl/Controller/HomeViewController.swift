@@ -19,7 +19,9 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
   
     @IBOutlet weak var viewdown: UIView!
     
-    var player_s :AVPlayer = AVPlayer.init()
+//    var player_s :AVPlayevar = AVPlayer.init()
+    
+  
     
     var dataArr = NSArray.init()
     var tableView: UITableView!
@@ -56,46 +58,33 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         self.tableView.mj_header.endRefreshing()
     }
     
-    func btnActionRightItem()  { 
-//        ZShowHud.show(view: self.view)
-        
-//        MBProgressHUD.zshow(view: self.view)
-//        MBProgressHUD.showAdded(to: self.view, animated: true)
-//        MBProgressHUD.hudShowMessage(curview: self.view, message: "adsf")
+    func btnActionRightItem()  {
         DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now() + 2) {
             DispatchQueue.main.async(execute: {
-//                ZShowHud.hide(view: self.view)
-//                MBProgressHUD.zhide(view: self.view)
-//                MBProgressHUD.hudHid(curview: self.view)
-                MBProgressHUD.hide(for: self.view, animated: true)
             })
-
         }
          
     }
     func requestData() {
-        requestDataHeaderCategory()
         requestDataHeaderCycle()
+        requestDataHeaderCategory()
         requestDataList()
     }
     func requestDataHeaderCycle()  {
         let param = HomeParamCycle.init(gc_id: "0")
-        let json = param.toJSON()
-        ZHomeTool.homeRequestCycle(params: json as AnyObject, success: { ( res) in
+        let json =  param.toJSON()
+        ZHomeTool.homeRequestCycle(params: json!, success: { ( res) in
             let b : BaseResult = res as! BaseResult
             if b.success == true{
                 self.headerView.dataArrCycle = b.array
              }else{
-                
+                MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
             }
-            
-        }) { (err) in
-//            MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
+        }) { (err) in 
         }
     }
     func requestDataHeaderCategory()  {
         ZHomeTool.homeRequestCategory(success: { (res) in
-            
             let result : BaseResult = res as! BaseResult
             if  result.success {
                 self.headerView.dataArrCategory = result.array
@@ -103,29 +92,24 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
                 MBProgressHUD.hudShowMessage(curview: self.view, message: result.error)
             }
         }) { (err) in
-//            MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
         }
     }
     func requestDataList()  {
-        
         let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
         let json = m.toJSON()
-        
-        MBProgressHUD.zshow(view: self.view) 
-        ZHomeTool.homeRequestList(params: json as AnyObject, success: { ( res) in
-            
+        ZHomeTool.homeRequestList(params: json!, success: { (res) in
             MBProgressHUD.zhide(view: self.view)
             let result: BaseResult = res as! BaseResult
             if result.success {
                 self.dataArr = result.array
                 self.tableView.reloadData()
             }else{
-                
+                MBProgressHUD.hudShowFail(curview: self.view, text: "fail")
             }
-        }) { ( err) in
+        }) { (err) in
             
-            MBProgressHUD.zhide(view: self.view)
         }
+        
     }
     func setupTableview()  {
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height: MLScreenHeight - 0 - 49))
@@ -169,7 +153,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         let str = "http://fs.w.kugou.com/201803201552/bdf56716d06d36c70c98c6d664256d05/G129/M07/0F/1D/YZQEAFqEPxCAATmCADTDHJ21QXE192.mp3"
         let url = NSURL.init(string: str)
         let player = AVPlayer.init(url: url! as URL)
-        self.player_s = player
+//        self.player_s = player
         player.play()
 
     }

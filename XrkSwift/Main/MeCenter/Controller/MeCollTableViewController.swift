@@ -27,21 +27,16 @@ class MeCollTableViewController: UITableViewController {
         let param = MeParamColl.init()
         param.curpage = 1
         param.page = 10
-//        param.key = "asdf"
-//        param._key = "ujnujn"
         let json = param.toJSON()
-        MBProgressHUD.zshow(view: self.view)
-        ZMETool.meRequestCol(params: json!, success: { (res) in
-            MBProgressHUD.zhide(view: self.view)
+        ZMETool.MeRequestCol(params: json!, success: { (res) in
             let result:BaseResult =  res as! BaseResult
             if result.success {
                 self.dataArr = result.array
                 self.tableView.reloadData()
             }else{
-
             }
         }) { (err) in
-            MBProgressHUD.zhide(view: self.view)
+            
             MBProgressHUD.hudShowMessage(curview: self.view, message: MESSAGE_network_fail)
         }
         
@@ -72,7 +67,6 @@ class MeCollTableViewController: UITableViewController {
         
         weak var weakself = self
         cell.block = { model in
-            let a : MeModelCol = model
             weakself?.cellQuit(strid: model.goods_id)
         }
         return cell
@@ -80,8 +74,9 @@ class MeCollTableViewController: UITableViewController {
     
     func cellQuit(strid: String)  {
         let param = MeParamCollCancle.init(favid: strid)
+        let json = param.toJSON()
         
-        ZMETool.meRequestColCancle(params: param.toJSON() as Any, success: { (res) in
+        ZMETool.MeRequestColCancle(params: json!, success: { (res) in
             let result:BaseResult =  res as! BaseResult
             if result.success {
                MBProgressHUD.hudShowSuccess(curview: self.view, text: "取消成功")

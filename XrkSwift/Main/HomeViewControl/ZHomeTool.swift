@@ -12,14 +12,14 @@ import HandyJSON
 
 class ZHomeTool: NSObject {
   
-    static func homeRequestCycle(params: AnyObject? = nil, success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: NSError) -> ())  {
-        RequestTool.defaultTool.request(method: .get, urlString: URL_home_cycle, parameters: params, resultBlock: { (res) in
-            
+    static func homeRequestCycle(params: [String : Any], success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
+    
+        ZHTTPTool.requestDataNOParam(.get, urlString: URL_home_cycle, success: { (res) in
             let b = BaseResult.deserialize(from: res)
-            let list : NSDictionary = res!["datas"] as! NSDictionary
+            let list : NSDictionary = res["datas"] as! NSDictionary
             let bannerList: NSArray = list["banner_position_list"] as! NSArray
             let arra:NSArray = bannerList[0] as! NSArray
- 
+            
             let mutArr = NSMutableArray.init()
             for dict : NSDictionary in arra as! [NSDictionary]{
                 let model : HomeModelCycle = HomeModelCycle.deserialize(from: dict)!
@@ -27,16 +27,16 @@ class ZHomeTool: NSObject {
             }
             b?.array = mutArr.copy() as! NSArray
             success(b ?? BaseResult.init())
-            
-        }) { (err) in
-            fail(err!)
-        }
+        }, fail: { (err) in
+            fail(err )
+        })
+         
     }
-    static func homeRequestCategory(params: AnyObject? = nil, success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: NSError) -> ())  {
-        RequestTool.defaultTool.request(method: .get, urlString: URL_home_category, parameters: params, resultBlock: { (res) in
-            
+    static func homeRequestCategory( success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
+        
+        ZHTTPTool.requestDataNOParam(.get, urlString: URL_home_category, success: { (res) in
             let b = BaseResult.deserialize(from: res)
-            let list: NSArray  = res!["datas"] as! NSArray
+            let list: NSArray  = res["datas"] as! NSArray
             let mutArr = NSMutableArray.init()
             for dic : NSDictionary in list as! [NSDictionary]  {
                 let model = HomeModelCategory.deserialize(from: dic)
@@ -45,16 +45,18 @@ class ZHomeTool: NSObject {
             b?.array = mutArr.copy() as! NSArray
             success(b ?? BaseResult.init())
             
-        }) { (err) in
-            fail(err!)
-        }
-    }
+        }, fail: { (err) in
+            
+            fail(err)
+        })
+       
+       }
     
-    static func homeRequestList(params: AnyObject? = nil, success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: NSError) -> ())  {
+    static func homeRequestList(params: [String : Any], success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
     
-        RequestTool.defaultTool.request(method: .get, urlString: URL_home_list, parameters: params, resultBlock: { ( responseObj) in
-            let b =  BaseResult.deserialize(from: responseObj)
-            let datas: NSDictionary = responseObj!["datas"] as! NSDictionary
+        ZHTTPTool.requestData(.get, urlString: URL_home_list, params: params, success: { (res) in
+            let b =  BaseResult.deserialize(from: res)
+            let datas: NSDictionary = res["datas"] as! NSDictionary
             let list = datas["recommend_list"]
             let mutArr = NSMutableArray.init()
             for dic: NSDictionary in list as! Array{
@@ -62,10 +64,11 @@ class ZHomeTool: NSObject {
                 mutArr.add(submodel ?? HomeModelList())
             }
             b?.array = mutArr.mutableCopy() as! NSArray
-            success(b ?? BaseResult())
-        }) { (err) in
-            fail(err!)
-        }
+            success(b!)
+        }, fail: { (err) in
+            fail(err)
+        })
+        
     }
     
 }
