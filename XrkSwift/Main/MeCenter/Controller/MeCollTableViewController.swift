@@ -41,11 +41,9 @@ class MeCollTableViewController: UITableViewController {
         }
         
     }
-    func base(){
-        
-        self.title = "coll"
-        self.z_navLeftItem(target: self, action: #selector(z_back))
-         
+    func base(){ 
+        self.title = "coll" 
+        self.zNavLeftBarButtonItem(target: self )
         self.clearsSelectionOnViewWillAppear = false
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         self.navigationItem.rightBarButtonItem = self.editButtonItem

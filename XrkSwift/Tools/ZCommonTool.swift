@@ -19,6 +19,7 @@ class ZCommonTool {
     
     static func UserKey() -> NSString{
         //zuserkey
+//        return "asdf"
         return "2c002f45dbd6b3be271db4ea0cce9154"
     }
     

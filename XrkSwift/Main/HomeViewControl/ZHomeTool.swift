@@ -35,6 +35,7 @@ class ZHomeTool: NSObject {
     static func homeRequestCategory( success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
         
         ZHTTPTool.requestDataNOParam(.get, urlString: URL_home_category, success: { (res) in
+            
             let b = BaseResult.deserialize(from: res)
             let list: NSArray  = res["datas"] as! NSArray
             let mutArr = NSMutableArray.init()
@@ -55,12 +56,17 @@ class ZHomeTool: NSObject {
     static func homeRequestList(params: [String : Any], success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
     
         ZHTTPTool.requestData(.get, urlString: URL_home_list, params: params, success: { (res) in
+            
+            
             let b =  BaseResult.deserialize(from: res)
-            let datas: NSDictionary = res["datas"] as! NSDictionary
-            let list = datas["recommend_list"]
+//            let datas: NSDictionary = res["datas"] as! NSDictionary
+//            let list = datas["recommend_list"]
+            
+            let json = JSON.init(res)
+            let newArr = json["datas"]["recommend_list"].arrayValue
             let mutArr = NSMutableArray.init()
-            for dic: NSDictionary in list as! Array{
-                let submodel = HomeModelList.deserialize(from: dic)
+            for js: JSON in newArr {
+                 let submodel = HomeModelList.deserialize(from: js.dictionaryValue)
                 mutArr.add(submodel ?? HomeModelList())
             }
             b?.array = mutArr.mutableCopy() as! NSArray

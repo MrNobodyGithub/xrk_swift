@@ -29,11 +29,12 @@ class ZMETool :NSObject{
         ZHTTPTool.requestData(.get, urlString: URL_me_coll, params: params, success: { (res) in
             let b = BaseResult.deserialize(from: res)
             if res["datas"] is NSDictionary{
-                let list  = res["datas"] as! NSDictionary
-                let arra: NSArray = list["favorites_list"] as! NSArray
+                let json = JSON.init(res)
+                let newArr = json["datas"]["favorites_list"].arrayValue
+                
                 let mutArr = NSMutableArray.init()
-                for dict : NSDictionary in arra as! [NSDictionary]{
-                    let model : MeModelCol = MeModelCol.deserialize(from: dict)!
+                for jj :JSON in newArr{
+                    let model : MeModelCol = MeModelCol.deserialize(from: jj.dictionary)!
                     mutArr.add(model)
                 }
                 b?.array = mutArr.copy() as! NSArray

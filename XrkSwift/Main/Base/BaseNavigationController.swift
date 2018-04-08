@@ -1,25 +1,26 @@
 //
-//  MainViewController.swift
+//  BaseNavigationController.swift
 //  XrkSwift
 //
-//  Created by apple on 2017/9/7.
-//  Copyright © 2017年 HuaZhengInfo. All rights reserved.
+//  Created by jason on 2018/4/4.
+//  Copyright © 2018年 HuaZhengInfo. All rights reserved.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-     
     
-}
+ 
 
+}

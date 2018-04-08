@@ -15,8 +15,6 @@
 		18CEFEA91F612D28000A7F94 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEA81F612D28000A7F94 /* BaseViewController.swift */; };
 		18CEFEAF1F612D7F000A7F94 /* MeCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEAE1F612D7F000A7F94 /* MeCenterViewController.swift */; };
 		18CEFEB11F612D98000A7F94 /* PlaceAnOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEB01F612D98000A7F94 /* PlaceAnOrderVC.swift */; };
-		18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEFEE51F61324E000A7F94 /* NavigationController.swift */; };
-		46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */; };
 		4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636632064AAD5002540BF /* HomeHeaderView.swift */; };
 		4B3636672064AE1F002540BF /* ZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636662064AE1F002540BF /* ZButton.swift */; };
 		4B3636692064B17F002540BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3636682064B17F002540BF /* Extension.swift */; };
@@ -36,12 +34,12 @@
 		4B8A96EC205A37B30043062D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96EB205A37B30043062D /* BaseModel.swift */; };
 		4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */; };
 		4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A96EF205A3DA20043062D /* HomeListCell.xib */; };
-		4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A96F1205A57E50043062D /* ZShowHUD.swift */; };
 		4B9ED734206A30FB00FF867D /* HomeCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED733206A30FB00FF867D /* HomeCategoryListVC.swift */; };
 		4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED73D206A348C00FF867D /* MeCollTableViewController.swift */; };
 		4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B9ED73E206A348C00FF867D /* MeCollTableViewController.xib */; };
 		4B9ED744206A376000FF867D /* MeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED743206A376000FF867D /* MeParams.swift */; };
 		4B9ED746206A376A00FF867D /* MeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ED745206A376A00FF867D /* MeModels.swift */; };
+		4BAAA92F2074D3D300898356 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAAA92E2074D3D300898356 /* BaseNavigationController.swift */; };
 		4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCDE9B2068C56100C49039 /* HomeParams.swift */; };
 		4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */; };
 		4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */; };
@@ -94,9 +92,7 @@
 		18CEFEA81F612D28000A7F94 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18CEFEAE1F612D7F000A7F94 /* MeCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCenterViewController.swift; sourceTree = "<group>"; };
 		18CEFEB01F612D98000A7F94 /* PlaceAnOrderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnOrderVC.swift; sourceTree = "<group>"; };
-		18CEFEE51F61324E000A7F94 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XrkSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAFNetworkingTool.swift; sourceTree = "<group>"; };
 		4B3636632064AAD5002540BF /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		4B3636662064AE1F002540BF /* ZButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZButton.swift; sourceTree = "<group>"; };
 		4B3636682064B17F002540BF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -115,12 +111,12 @@
 		4B8A96EB205A37B30043062D /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		4B8A96ED205A3D6A0043062D /* HomeListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCellView.swift; sourceTree = "<group>"; };
 		4B8A96EF205A3DA20043062D /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
-		4B8A96F1205A57E50043062D /* ZShowHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZShowHUD.swift; sourceTree = "<group>"; };
 		4B9ED733206A30FB00FF867D /* HomeCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryListVC.swift; sourceTree = "<group>"; };
 		4B9ED73D206A348C00FF867D /* MeCollTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCollTableViewController.swift; sourceTree = "<group>"; };
 		4B9ED73E206A348C00FF867D /* MeCollTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewController.xib; sourceTree = "<group>"; };
 		4B9ED743206A376000FF867D /* MeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeParams.swift; sourceTree = "<group>"; };
 		4B9ED745206A376A00FF867D /* MeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModels.swift; sourceTree = "<group>"; };
+		4BAAA92E2074D3D300898356 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		4BBCDE9B2068C56100C49039 /* HomeParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeParams.swift; sourceTree = "<group>"; };
 		4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCollTableViewCell.swift; sourceTree = "<group>"; };
 		4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewCell.xib; sourceTree = "<group>"; };
@@ -259,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				18CEFEA81F612D28000A7F94 /* BaseViewController.swift */,
-				18CEFEE51F61324E000A7F94 /* NavigationController.swift */,
+				4BAAA92E2074D3D300898356 /* BaseNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -269,8 +265,6 @@
 			children = (
 				4B7A58D81F62372D000AFCD0 /* ZHttpTool.swift */,
 				4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */,
-				46C10BAF205528E800DEB95D /* ZAFNetworkingTool.swift */,
-				4B8A96F1205A57E50043062D /* ZShowHUD.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -605,13 +599,11 @@
 				18CEFE751F6127D3000A7F94 /* AppDelegate.swift in Sources */,
 				18CEFEAF1F612D7F000A7F94 /* MeCenterViewController.swift in Sources */,
 				4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */,
-				46C10BB0205528E800DEB95D /* ZAFNetworkingTool.swift in Sources */,
 				4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */,
 				4B3636672064AE1F002540BF /* ZButton.swift in Sources */,
 				4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */,
 				4B9ED744206A376000FF867D /* MeParams.swift in Sources */,
 				4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */,
-				4B8A96F2205A57E50043062D /* ZShowHUD.swift in Sources */,
 				4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */,
 				4B9ED746206A376A00FF867D /* MeModels.swift in Sources */,
 				18CEFEA91F612D28000A7F94 /* BaseViewController.swift in Sources */,
@@ -621,9 +613,9 @@
 				4B7A58D91F62372D000AFCD0 /* ZHttpTool.swift in Sources */,
 				4B7A59441F628968000AFCD0 /* Header.swift in Sources */,
 				4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */,
-				18CEFEE61F61324E000A7F94 /* NavigationController.swift in Sources */,
 				4B7A58F11F626F69000AFCD0 /* ZHomeTool.swift in Sources */,
 				4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */,
+				4BAAA92F2074D3D300898356 /* BaseNavigationController.swift in Sources */,
 				4B7A58F41F62710C000AFCD0 /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

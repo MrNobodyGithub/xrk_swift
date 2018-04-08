@@ -11,6 +11,7 @@ import UIKit
 
 let MLScreenWidth = UIScreen.main.bounds.size.width
 let MLScreenHeight  = UIScreen.main.bounds.size.height
+let MLStatusHeight = UIApplication.shared.statusBarFrame.size.height
 
 
 // mbprogresshud  提示文案

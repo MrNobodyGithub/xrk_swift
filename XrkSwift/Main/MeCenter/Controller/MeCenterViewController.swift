@@ -47,6 +47,8 @@ class MeCenterViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func setupUI()  {
         //创建tab
         self.meTabView = UITableView(frame:view.bounds,style: UITableViewStyle.plain)
+    
+        self.meTabView?.frame = CGRect.init(x: 0, y:-MLStatusHeight , width: MLScreenWidth, height: MLScreenHeight+MLStatusHeight)
         self.view!.addSubview(self.meTabView!)
 
         self.meTabView?.delegate = self

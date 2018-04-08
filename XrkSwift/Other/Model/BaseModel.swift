@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SwiftyJSON
+//import SwiftyJSON
 import HandyJSON
 
 
@@ -31,15 +31,6 @@ class BaseResult: HandyJSON {
     }
 }
 
-//var dataArrCycle :NSArray{
-//    set{
-//        _dataArrCycle  = newValue
-//        setupViewCycle(arr: newValue)
-//    }
-//    get {
-//        return _dataArrCycle!
-//    }
-//}
 
 class BaseParam: NSObject, HandyJSON {
     var key = ZCommonTool.UserKey()
