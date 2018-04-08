@@ -21,6 +21,8 @@
 		4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */; };
 		4B36FBD32018383E0081ABDB /* ZMeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBD22018383E0081ABDB /* ZMeTool.swift */; };
 		4B36FBD820186FF10081ABDB /* StaticDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36FBD720186FF10081ABDB /* StaticDefine.swift */; };
+		4B3CE20C207A0130004BB244 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3CE20A207A0130004BB244 /* TestViewController.swift */; };
+		4B3CE20D207A0130004BB244 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3CE20B207A0130004BB244 /* TestViewController.xib */; };
 		4B7A58D91F62372D000AFCD0 /* ZHttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A58D81F62372D000AFCD0 /* ZHttpTool.swift */; };
 		4B7A58F11F626F69000AFCD0 /* ZHomeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A58F01F626F69000AFCD0 /* ZHomeTool.swift */; };
 		4B7A58F21F626F69000AFCD0 /* ZHomeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A58F01F626F69000AFCD0 /* ZHomeTool.swift */; };
@@ -99,6 +101,8 @@
 		4B36FBCE2018182E0081ABDB /* ZCommonTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCommonTool.swift; sourceTree = "<group>"; };
 		4B36FBD22018383E0081ABDB /* ZMeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMeTool.swift; sourceTree = "<group>"; };
 		4B36FBD720186FF10081ABDB /* StaticDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDefine.swift; sourceTree = "<group>"; };
+		4B3CE20A207A0130004BB244 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		4B3CE20B207A0130004BB244 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		4B7A58D81F62372D000AFCD0 /* ZHttpTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHttpTool.swift; sourceTree = "<group>"; };
 		4B7A58F01F626F69000AFCD0 /* ZHomeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHomeTool.swift; sourceTree = "<group>"; };
 		4B7A58F31F62710C000AFCD0 /* HomeModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 		18CEFEA31F612AA1000A7F94 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4B3CE20A207A0130004BB244 /* TestViewController.swift */,
+				4B3CE20B207A0130004BB244 /* TestViewController.xib */,
 				18CEFEA71F612CFB000A7F94 /* Base */,
 				18CEFEA41F612AA1000A7F94 /* HomeCenter */,
 				18CEFEA51F612AA1000A7F94 /* MeCenter */,
@@ -519,6 +525,7 @@
 				4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */,
 				4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */,
 				18CEFE7F1F6127D3000A7F94 /* LaunchScreen.storyboard in Resources */,
+				4B3CE20D207A0130004BB244 /* TestViewController.xib in Resources */,
 				18B46D761F627AC200E13869 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +617,7 @@
 				4B3636642064AAD5002540BF /* HomeHeaderView.swift in Sources */,
 				4B7A593F1F6286D1000AFCD0 /* HomeViewController.swift in Sources */,
 				18CEFEB11F612D98000A7F94 /* PlaceAnOrderVC.swift in Sources */,
+				4B3CE20C207A0130004BB244 /* TestViewController.swift in Sources */,
 				4B7A58D91F62372D000AFCD0 /* ZHttpTool.swift in Sources */,
 				4B7A59441F628968000AFCD0 /* Header.swift in Sources */,
 				4B9ED73F206A348C00FF867D /* MeCollTableViewController.swift in Sources */,
@@ -776,7 +784,7 @@
 					"\"$(SRCROOT)/Pods/MBProgressHUD/MBProgressHUD.h\"",
 				);
 				INFOPLIST_FILE = XrkSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,7 +813,7 @@
 					"\"$(SRCROOT)/Pods/MBProgressHUD/MBProgressHUD.h\"",
 				);
 				INFOPLIST_FILE = XrkSwift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -41,10 +41,26 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
          requestData()
          setupRefresh()
     }
+    
     func basicConfigration()  {
          self.title = "home"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(btnActionRightItem))
+//        #imageLiteral(resourceName: "back_b")
+//        #imageLiteral(resourceName: "serPrice")
+        let btn = UIButton.init(type: .custom)
+        btn.setImage(#imageLiteral(resourceName: "serPrice"), for: .normal)
+        btn.addTarget(self, action: #selector(swipeAction), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: btn)
+        let swipe = UISwipeGestureRecognizer.init(target: self, action: #selector(btnActionRightItem))
+        swipe.direction = .left
+        btn.addGestureRecognizer(swipe)
+        
     }
+    func swipeAction(){
+//        TestViewController.init
+        let vc = TestViewController()
+        vc.hidesBottomBarWhenPushed = true; self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     func setupRefresh(){
   
