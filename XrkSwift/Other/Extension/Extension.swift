@@ -111,4 +111,26 @@ extension UIViewController{
         self.navigationController?.popViewController(animated: true)
     }
     
+    func getCurrentViewCon() -> UIViewController {
+        let vc = UIApplication.shared.keyWindow?.rootViewController
+        return getCurrentVCFrom(rootVC: vc!)
+    }
+    func getCurrentVCFrom(rootVC : UIViewController) -> UIViewController {
+        let curVC : UIViewController
+        if (rootVC.presentedViewController != nil) {
+            curVC = rootVC.presentedViewController!
+        }else if rootVC.isKind(of: UITabBarController.self){
+            let rvc = rootVC as! UITabBarController
+//            curVC = rvc.selectedViewController!
+            curVC = getCurrentVCFrom(rootVC: rvc.selectedViewController!)
+        }else if rootVC.isKind(of: UINavigationController.self){
+            let nvc = rootVC as! UINavigationController
+//            curVC = nvc.visibleViewController!
+            curVC = getCurrentVCFrom(rootVC: nvc.visibleViewController!)
+        }else{
+            curVC = rootVC
+        }
+        return curVC
+    }
+    
 }
