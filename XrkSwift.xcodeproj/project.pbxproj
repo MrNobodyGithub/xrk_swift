@@ -479,9 +479,9 @@
 				TargetAttributes = {
 					18CEFE701F6127D3000A7F94 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = C3NGB9EK32;
+						DevelopmentTeam = D5M86GS334;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					18CEFE841F6127D3000A7F94 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -774,9 +774,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = C3NGB9EK32;
+				DEVELOPMENT_TEAM = D5M86GS334;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = (
@@ -786,10 +786,10 @@
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.onez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4e0a1413-d8b2-427d-afb3-5d370031ebfa";
-				PROVISIONING_PROFILE_SPECIFIER = hisunflowerhzappHocDevs;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XrkSwift/Other/File/XrkSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -802,10 +802,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = C3NGB9EK32;
+				DEVELOPMENT_TEAM = D5M86GS334;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = (
@@ -815,10 +815,10 @@
 				INFOPLIST_FILE = XrkSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hisunflower.hzappHoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.onez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cde4d332-75d2-4a8e-9593-e23cc88a28c7";
-				PROVISIONING_PROFILE_SPECIFIER = HzappHocPros;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XrkSwift/Other/File/XrkSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

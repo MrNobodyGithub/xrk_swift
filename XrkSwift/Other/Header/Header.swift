@@ -7,8 +7,8 @@
 //
 import UIKit 
 //hiaddress
-let ADDRESS = "http://test.hisunflower.com/mobile/index.php?"
-//let ADDRESS = "http://www.hisunflower.com/mobile/index.php?"
+//let ADDRESS = "http://test.hisunflower.com/mobile/index.php?"
+let ADDRESS = "http://www.hisunflower.com/mobile/index.php?"
 //let ADDRESS = "http://ys.hisunflower.com/mobile/index.php?"
 
 
