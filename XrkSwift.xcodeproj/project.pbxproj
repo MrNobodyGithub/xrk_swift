@@ -46,6 +46,11 @@
 		4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */; };
 		4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */; };
 		4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50E7F20610DF300B983B4 /* AVKit.framework */; };
+		85C75A942086F8AB002B5A3D /* ZTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C75A932086F8AB002B5A3D /* ZTestView.xib */; };
+		85C75A9620871D9F002B5A3D /* File.md in Resources */ = {isa = PBXBuildFile; fileRef = 85C75A9520871D9F002B5A3D /* File.md */; };
+		85F329152086DE930077AC37 /* TestOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F329132086DE930077AC37 /* TestOneViewController.swift */; };
+		85F329162086DE930077AC37 /* TestOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85F329142086DE930077AC37 /* TestOneViewController.xib */; };
+		85F329182086E6220077AC37 /* ZTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F329172086E6220077AC37 /* ZTestView.swift */; };
 		A708A6F6D0684F3B00584FF0 /* Pods_XrkSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2513FE8625B042AB4B235612 /* Pods_XrkSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -126,6 +131,11 @@
 		4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewCell.xib; sourceTree = "<group>"; };
 		4BDBC3B7206B7382006002AA /* note_for_me.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = note_for_me.md; sourceTree = "<group>"; };
 		4BE50E7F20610DF300B983B4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		85C75A932086F8AB002B5A3D /* ZTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTestView.xib; sourceTree = "<group>"; };
+		85C75A9520871D9F002B5A3D /* File.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = File.md; sourceTree = "<group>"; };
+		85F329132086DE930077AC37 /* TestOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOneViewController.swift; sourceTree = "<group>"; };
+		85F329142086DE930077AC37 /* TestOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestOneViewController.xib; sourceTree = "<group>"; };
+		85F329172086E6220077AC37 /* ZTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZTestView.swift; sourceTree = "<group>"; };
 		B77260DFD7841D17FDBDC96C /* Pods-XrkSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D593122B90D8639A547AF65A /* Pods-XrkSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XrkSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XrkSwift/Pods-XrkSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +171,7 @@
 		18CEFE681F6127D3000A7F94 = {
 			isa = PBXGroup;
 			children = (
+				85C75A9520871D9F002B5A3D /* File.md */,
 				18CEFE731F6127D3000A7F94 /* XrkSwift */,
 				18CEFE881F6127D3000A7F94 /* XrkSwiftTests */,
 				18CEFE931F6127D3000A7F94 /* XrkSwiftUITests */,
@@ -215,6 +226,10 @@
 		18CEFEA31F612AA1000A7F94 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				85F329172086E6220077AC37 /* ZTestView.swift */,
+				85C75A932086F8AB002B5A3D /* ZTestView.xib */,
+				85F329132086DE930077AC37 /* TestOneViewController.swift */,
+				85F329142086DE930077AC37 /* TestOneViewController.xib */,
 				4B3CE20A207A0130004BB244 /* TestViewController.swift */,
 				4B3CE20B207A0130004BB244 /* TestViewController.xib */,
 				18CEFEA71F612CFB000A7F94 /* Base */,
@@ -521,8 +536,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C75A9620871D9F002B5A3D /* File.md in Resources */,
 				4B8A96F0205A3DA20043062D /* HomeListCell.xib in Resources */,
+				85F329162086DE930077AC37 /* TestOneViewController.xib in Resources */,
 				4B9ED740206A348C00FF867D /* MeCollTableViewController.xib in Resources */,
+				85C75A942086F8AB002B5A3D /* ZTestView.xib in Resources */,
 				4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */,
 				18CEFE7F1F6127D3000A7F94 /* LaunchScreen.storyboard in Resources */,
 				4B3CE20D207A0130004BB244 /* TestViewController.xib in Resources */,
@@ -599,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F329152086DE930077AC37 /* TestOneViewController.swift in Sources */,
 				4B3636692064B17F002540BF /* Extension.swift in Sources */,
 				4B9ED734206A30FB00FF867D /* HomeCategoryListVC.swift in Sources */,
 				4B8A96EC205A37B30043062D /* BaseModel.swift in Sources */,
@@ -609,6 +628,7 @@
 				4BBCDE9C2068C56100C49039 /* HomeParams.swift in Sources */,
 				4B3636672064AE1F002540BF /* ZButton.swift in Sources */,
 				4B8A96EE205A3D6A0043062D /* HomeListCellView.swift in Sources */,
+				85F329182086E6220077AC37 /* ZTestView.swift in Sources */,
 				4B9ED744206A376000FF867D /* MeParams.swift in Sources */,
 				4B8509B920528C0D00D2CE61 /* OcSwiftBridgeObject.m in Sources */,
 				4B36FBCF2018182E0081ABDB /* ZCommonTool.swift in Sources */,

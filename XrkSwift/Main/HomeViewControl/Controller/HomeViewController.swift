@@ -57,7 +57,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     }
     func swipeAction(){
 //        TestViewController.init
-        let vc = TestViewController()
+        let vc = TestOneViewController()//TestViewController()
         vc.hidesBottomBarWhenPushed = true; self.navigationController?.pushViewController(vc, animated: true)
     }
     

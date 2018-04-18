@@ -18,6 +18,12 @@ extension Int{
     }
 }
 extension UIView{
+    class func instanteFormNib<T: UIView>() -> T {
+        let name = String(describing: T.self)
+        let view = UINib(nibName: name, bundle: nil).instantiate(withOwner: nil, options: nil).last
+        return view as! T
+    }
+    
     func zsetX(x:CGFloat){
         self.frame.origin = CGPoint.init(x: x, y: self.frame.origin.y)
     }
