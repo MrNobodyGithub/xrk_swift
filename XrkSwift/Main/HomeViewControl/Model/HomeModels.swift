@@ -12,7 +12,8 @@ import HandyJSON
 
 
 //-----------------model------------------
-class HomeModelList: HandyJSON { 
+class HomeModelList: HandyJSON  {
+   
     var store_avatar_url :String = ""
     var store_avatar: String = ""
     var store_name: String = ""

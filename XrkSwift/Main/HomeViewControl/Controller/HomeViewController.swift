@@ -21,7 +21,13 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     
 //    var player_s :AVPlayevar = AVPlayer.init()
     
+    func testB()  {
+        print("oc -> swift ok b")
+    }
   
+    func testA(){
+        print("oc -> swift ok")
+    }
     
     var dataArr = NSArray.init()
     var tableView: UITableView!
@@ -58,7 +64,7 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
     func swipeAction(){
 //        TestViewController.init
         let vc = TestOneViewController()//TestViewController()
-        vc.hidesBottomBarWhenPushed = true; self.navigationController?.pushViewController(vc, animated: true)
+       vc.hidesBottomBarWhenPushed = true; self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

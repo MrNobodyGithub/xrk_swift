@@ -9,8 +9,17 @@
 #import "OcSwiftBridgeObject.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 @implementation OcSwiftBridgeObject
-- (void)a{
+ 
+- (void)testA{
+
+//    MBProgressHUD.hudShowSuccess(curview: <#T##UIView?#>, text: <#T##String#>)
+
+    NSLog(@"%@",@"swift 调用 oc   ok");
+    
+    
     
 }
+
 @end

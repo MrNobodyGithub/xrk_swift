@@ -41,62 +41,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XrkSwift/Main/ZTestView.swift"
-            timestampString = "545725697.1340491"
+            filePath = "XrkSwift/Main/HomeViewControl/View/HomeHeaderView.swift"
+            timestampString = "546232762.897077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "init(frame:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "setupViewCycle(arr:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XrkSwift/Main/ZTestView.swift"
-            timestampString = "545725697.134115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "initialFromXib()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XrkSwift.ZTestView.initialFromXib() -&gt; ()"
-                  moduleName = "XrkSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shuzishijian/Desktop/MyDemo/xrk_swift/XrkSwift/Main/ZTestView.swift"
-                  timestampString = "545725456.35438"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "17">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "XrkSwift.ZTestView.initialFromXib() -&gt; ()"
-                  moduleName = "XrkSwift"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shuzishijian/Desktop/MyDemo/xrk_swift/XrkSwift/Main/ZTestView.swift"
-                  timestampString = "545725456.35718"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "1153">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

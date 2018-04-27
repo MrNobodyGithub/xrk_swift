@@ -12,9 +12,7 @@ import SDWebImage
 
 
 class HomeListCell: UITableViewCell {
-    
-    
-  
+     
     @IBOutlet weak var cellImage: UIImageView!
     
     @IBOutlet weak var cellTitle: UILabel!

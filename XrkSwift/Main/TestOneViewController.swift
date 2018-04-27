@@ -11,12 +11,13 @@ import UIKit
 
 class TestOneViewController: UIViewController {
   
-    @IBOutlet weak var textfield: UITextField!
-    @IBOutlet weak var layoutBtnTop: NSLayoutConstraint!
-    @IBOutlet weak var labTest: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
  
+        print("-------")
 //        let testView = Bundle.main.loadNibNamed("ZTestView", owner: self, options: nil)?.last as! ZTestView
         
         let rect = CGRect.init(x: 0, y: 200, width: MLScreenWidth, height: 200)
@@ -25,14 +26,20 @@ class TestOneViewController: UIViewController {
         testView.frame = rect
         
     }
-    @IBAction func btnAction(_ sender: Any) {
-        layoutBtnTop.constant = 100
-        labTest.text = "lab test"
+  
+    @IBAction func btnActionDrag(_ sender: Any) {
+        
     }
     
-    @IBAction func btnActionDrag(_ sender: Any) {
-        layoutBtnTop.constant = 234
-        labTest.text = "drag"
+    @IBAction func btnAction(_ sender: Any) {
+        let vc = TestOcViewController.init()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnActionSwiftOc(_ sender: Any) {
+        let model = OcSwiftBridgeObject.init()
+        model.testA()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

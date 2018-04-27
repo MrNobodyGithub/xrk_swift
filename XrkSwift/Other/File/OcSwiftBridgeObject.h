@@ -10,4 +10,8 @@
 
 @interface OcSwiftBridgeObject : NSObject
 
+- (void)testA;
+
+@property(nonatomic,copy) NSString * zStr;
+
 @end
