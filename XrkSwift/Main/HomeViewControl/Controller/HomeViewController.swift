@@ -139,12 +139,14 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         tableView.backgroundColor = UIColor.white
         tableView.delegate = self as UITableViewDelegate
         tableView.dataSource = self as UITableViewDataSource
+        tableView.register(UINib.init(nibName: "HomeListCell", bundle: nil), forCellReuseIdentifier: "HomeListCellId")
         
         //tableHeaderView
         let headerView = HomeHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: MLScreenWidth, height:240 + MLScreenWidth/2.0 ))
          tableView.tableHeaderView = headerView
         headerView.delegate = self
         self.headerView = headerView
+        
      }
     
     //代理方法
@@ -160,8 +162,8 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = HomeListCell.cellWith(tableView: tableView)
-        cell.cellWithData(model: self.dataArr[indexPath.row] as! HomeModelList)
+        let cell :HomeListCell = tableView.dequeueReusableCell(withIdentifier: "HomeListCellId") as! HomeListCell
+        cell.model = self.dataArr[indexPath.row] as! HomeModelList
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

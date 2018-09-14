@@ -19,14 +19,15 @@ class HomeListCell: UITableViewCell {
     
     @IBOutlet weak var cellDetail: UILabel!
     
+    
     var itemString:String?
     
-    func cellWithData(model: HomeModelList){
-        
-        cellTitle.text = model.store_name
-        cellImage.sd_setImage(with: NSURL.init(string: model.store_avatar_url)! as? URL)
-    
-        
+    var model:HomeModelList!{
+        didSet{
+            cellTitle.text = model.store_name
+            cellImage.sd_setImage(with: NSURL.init(string: model.store_avatar_url)! as? URL)
+            
+        }
     }
     
     
