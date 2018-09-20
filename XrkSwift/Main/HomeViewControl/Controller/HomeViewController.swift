@@ -116,9 +116,18 @@ class HomeViewController: BaseViewController , UITableViewDelegate, UITableViewD
         }) { (err) in
         }
     }
+    
+    func requeatDataT<T:NSObject>(_ param:T){
+        MLScreenWidth
+        
+    }
+    
     func requestDataList()  {
         let m = HomeParamList(areaId: "224",curp: "0",pg:"100")
+        
+        requeatDataT(m)
         let json = m.toJSON()
+    
         ZHomeTool.homeRequestList(params: json!, success: { (res) in
             MBProgressHUD.zhide(view: self.view)
             let result: BaseResult = res as! BaseResult

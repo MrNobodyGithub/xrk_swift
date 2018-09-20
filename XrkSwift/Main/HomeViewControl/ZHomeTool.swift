@@ -35,7 +35,6 @@ class ZHomeTool: NSObject {
     static func homeRequestCategory( success:@escaping (_ result: Any) -> (),fail:@escaping(_ error: Error) -> ())  {
         
         ZHTTPTool.requestDataNOParam(.get, urlString: URL_home_category, success: { (res) in
-            
             let b = BaseResult.deserialize(from: res)
             let list: NSArray  = res["datas"] as! NSArray
             let mutArr = NSMutableArray.init()

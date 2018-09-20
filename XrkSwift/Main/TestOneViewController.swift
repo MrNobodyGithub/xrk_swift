@@ -21,8 +21,9 @@ class TestOneViewController: UIViewController {
 //        let testView = Bundle.main.loadNibNamed("ZTestView", owner: self, options: nil)?.last as! ZTestView
         
         let rect = CGRect.init(x: 0, y: 200, width: MLScreenWidth, height: 200)
-        let testView = ZTestView.init(frame: rect)
+        let testView:ZTestView = ZTestView.init(frame: rect)
         self.view.addSubview(testView)
+     
         testView.frame = rect
         
     }

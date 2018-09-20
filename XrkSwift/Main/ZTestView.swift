@@ -10,9 +10,19 @@ import UIKit
 
 class ZTestView: UIView {
     
+    typealias swiftBlock = (_ str: String) -> Void
+    var callback: swiftBlock!
+    //3. 定义一个方法,方法的参数为和swiftBlock类型一致的闭包,并赋值给callBack
+    func callBackBlock(block: @escaping (_ str: String) -> Void) {
+        callback = block
+    }
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialFromXib()
+        
+        
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -46,6 +46,7 @@
 		4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBC3AF206B3B65006002AA /* MeCollTableViewCell.swift */; };
 		4BDBC3B2206B3B65006002AA /* MeCollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */; };
 		4BE50E8020610DF300B983B4 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE50E7F20610DF300B983B4 /* AVKit.framework */; };
+		8546B15C2151F9CE00108CE8 /* Genericity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546B15B2151F9CE00108CE8 /* Genericity.swift */; };
 		85B0050C214BAFCB006A23B7 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B0050A214BAFCB006A23B7 /* Enum.swift */; };
 		85B0050D214BAFCB006A23B7 /* Inherit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B0050B214BAFCB006A23B7 /* Inherit.swift */; };
 		85B9E9682088445A007B3E51 /* TestOcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B9E9662088445A007B3E51 /* TestOcViewController.m */; };
@@ -135,6 +136,7 @@
 		4BDBC3B0206B3B65006002AA /* MeCollTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCollTableViewCell.xib; sourceTree = "<group>"; };
 		4BDBC3B7206B7382006002AA /* note_for_me.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = note_for_me.md; sourceTree = "<group>"; };
 		4BE50E7F20610DF300B983B4 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		8546B15B2151F9CE00108CE8 /* Genericity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genericity.swift; sourceTree = "<group>"; };
 		85B0050A214BAFCB006A23B7 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		85B0050B214BAFCB006A23B7 /* Inherit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inherit.swift; sourceTree = "<group>"; };
 		85B9E9652088445A007B3E51 /* TestOcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestOcViewController.h; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				4B8A96EA205A37B30043062D /* Model */,
 				4B8509B520528BE900D2CE61 /* File */,
 				4B7A58DD1F6238D7000AFCD0 /* Header */,
+				8546B15B2151F9CE00108CE8 /* Genericity.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				4BDBC3B1206B3B65006002AA /* MeCollTableViewCell.swift in Sources */,
 				85B0050D214BAFCB006A23B7 /* Inherit.swift in Sources */,
 				4BAAA92F2074D3D300898356 /* BaseNavigationController.swift in Sources */,
+				8546B15C2151F9CE00108CE8 /* Genericity.swift in Sources */,
 				4B7A58F41F62710C000AFCD0 /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MBProgressHUD
+import HandyJSON
 enum MethodType {
     case get
     case post
@@ -22,11 +23,12 @@ enum ZNetworkReachabilityStatus {
          StatusReachableViaWiFi
 }
 class ZHTTPTool{
-    
+     
     class func requestData (_ type:MethodType, urlString:String ,params: [String : Any], success:@escaping(_ result : [String : Any]) -> (), fail:@escaping(_ result : Error) -> (),isHiddenHud: Bool? = false) {
         self .requestDataAll(type, urlString: urlString, params: params , success: success, fail: fail, isHiddenHud: isHiddenHud ?? false)
     }
     class func requestDataNOParam (_ type:MethodType, urlString:String , success:@escaping(_ result : [String : Any]) -> (), fail:@escaping(_ result : Error) -> (),isHiddenHud: Bool? = false) {
+        
         self.requestDataAll(type, urlString: urlString, params: BaseParam.init().toJSON() , success: success, fail: fail, isHiddenHud: isHiddenHud ?? false)
     }
     
@@ -40,6 +42,7 @@ class ZHTTPTool{
         }
         let method = type == .get ? HTTPMethod.get : HTTPMethod.post
     
+        
         Alamofire.request(urlString, method: method, parameters: params).responseJSON { (response) in
             
             if isHiddenHud ?? false{
@@ -48,7 +51,7 @@ class ZHTTPTool{
             }
             let result = response.result.value
             if response.result.isSuccess{
-                success(result as! [String : Any])
+                  success(result as! [String : Any])
             }else{
                 fail(response.result.error!)
             }
